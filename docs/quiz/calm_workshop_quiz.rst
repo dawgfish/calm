@@ -110,7 +110,6 @@ A pattern is common usage usually followed. If a pattern commonly adopted by oth
 - We can’t do DevOps – We’ve got the wrong people
 
 
-**************************************
 Version Control System (VCS) Questions
 **************************************
 
@@ -277,7 +276,6 @@ I will suggest you to include both the below mentioned commands:
 git branch –merged lists the branches that have been merged into the current branch.
 git branch –no-merged lists the branches that have not been merged.
 
-********************************
 Continuous Integration questions
 ********************************
 
@@ -372,7 +370,6 @@ The way I secure Jenkins is mentioned below. If you have any other way of doing 
 - Limit physical access to Jenkins data/folders.
 - Periodically run security audits on same.
 
-*****************************
 Continuous Testing Questions:
 *****************************
 
@@ -404,7 +401,6 @@ I have mentioned a generic flow below which you can refer to:
 In DevOps, developers are required to commit all the changes made in the source code to a shared repository. Continuous Integration tools like Jenkins will pull the code from this shared repository every time a change is made in the code and deploy it for Continuous Testing that is done by tools like Selenium as shown in the below diagram.
 In this way, any change in the code is continuously tested unlike the traditional approach.
 
-***********************************
 Automate testing - DevOps questions
 ***********************************
 
@@ -470,7 +466,6 @@ The following syntax can be used to launch Browser:
 
 For this answer, my suggestion would be to give a small definition of Selenium Grid. It can be used to execute same or different test scripts on multiple platforms and browsers concurrently to achieve distributed test execution. This allows testing under different environments and saving execution time remarkably.
 
-**********************************
 Configuration Management Questions
 **********************************
 
@@ -536,7 +531,6 @@ Now you should describe its architecture and how Puppet manages its Agents. Pupp
 
 Refer the diagram below that explains the above description.
 
-*********************************
 What is puppet - DevOps questions
 *********************************
 
@@ -588,7 +582,6 @@ Now you can explain the architecture of Chef, it consists of:
 
 - Chef Workstation: A Chef Workstation is the host you use to modify your cookbooks and other configuration data.
 
-************************************
 Chef architecture - DevOps questions
 ************************************
 
@@ -692,7 +685,6 @@ Production mode is set for all WebLogic Server instances in a given domain.
 
 Set -external_stage using weblogic.Deployer if you want to stage the application yourself, and prefer to copy it to its target by your own means.
 
-*******************************
 Continuous Monitoring Questions
 *******************************
 
@@ -828,7 +820,6 @@ I will advise you to first give a small introduction on State Stalking. It is us
 
 Depending on the discussion between you and the class you can also add, “It can be very helpful in later analysis of the log files. Under normal circumstances, the result of a host or service check is only logged if the host or service has changed state since it was last checked.”
 
-*********************************************
 Containerization and Virtualization Questions
 *********************************************
 
@@ -839,7 +830,6 @@ Let’s see how much you know about containers and VMs.
 My suggestion is to explain the need for containerization first, containers are used to provide consistent computing environment from a developer’s laptop to a test environment, from a staging environment into production.
 Now give a definition of containers, a container consists of an entire runtime environment: an application, plus all its dependencies, libraries and other binaries, and configuration files needed to run it, bundled into one package. Containerizing the application platform and its dependencies removes the differences in OS distributions and underlying infrastructure.
 
-*****************************
 Containers - DevOps questions
 *****************************
 
@@ -970,7 +960,6 @@ Note that Docker does not run on Windows or Mac.
 
 You can answer this by saying, no I won’t loose my data when Dcoker container exits. Any data that your application writes to disk gets preserved in its container until you explicitly delete the container. The file system for the container persists even after the container halts.
 
-********************
 Additional Questions
 ********************
 
