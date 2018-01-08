@@ -1,5 +1,5 @@
 ***************************************************
-Orchestration/Change Management Tools - Comparison
+Orchestration/Chammge Management Tools - Comparison
 ***************************************************
 
 
@@ -69,8 +69,7 @@ Chef is a configuration management tool for dealing with machine setup on physic
 
 Chef helps solve this problem by treating infrastructure as code. Rather than manually changing anything, the machine setup is described in a Chef recipe.
 
-- Chef repository contains all your Chef artifacts. It’s recommended to have it in your version control system.
-Developer machine issues knife commands. knife allows you to push Chef artifacts to Chef server or query information about your infrastructure from Chef server. You can also use knife to manually execute commands on nodes in your infrastructure.
+- Chef repository contains all your Chef artifacts. It’s recommended to have it in your version control system.  Developer machine issues knife commands. knife allows you to push Chef artifacts to Chef server or query information about your infrastructure from Chef server. You can also use knife to manually execute commands on nodes in your infrastructure.
 
 - Chef server is a central point of Chef architecture. It has all your cookbooks and settings. It tracks information about all nodes in your infrastructure.
 
@@ -131,8 +130,7 @@ It is the most fundamental configuration element within the organization. A reci
 
 - May tag a node to facilitate the creation of arbitrary groupings
 
-- Must be added to a run-list before it can be used by the chef-client
-Is always executed in the same order as listed in a run-list
+- Must be added to a run-list before it can be used by the chef-client.  Is always executed in the same order as listed in a run-list
 
 **Knife**
 
@@ -140,8 +138,7 @@ Chef's command-line tool called to interact with the Chef Server.
 
 - Use it for uploading cookbooks and managing other aspects of Chef.
 
-- Command-line tool that provides an interface between a local chef-repo and the Chef server. knife helps users to manage:
-Nodes,Cookbooks and recipes
+- Command-line tool that provides an interface between a local chef-repo and the Chef server. knife helps users to manage: Nodes,Cookbooks and recipes
 
 **Roles**
 
