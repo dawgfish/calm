@@ -1,5 +1,5 @@
 ***************************************************
-Orchestration/Chammge Management Tools - Comparison
+Orchestration/Change Management Tools - Comparison
 ***************************************************
 
 
