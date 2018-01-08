@@ -138,7 +138,7 @@ string before sending it down to the VM
 +----------------------+------------------------------------------------------+
 | Database\_name       | homestead                                            |
 +----------------------+------------------------------------------------------+
-| App\_git\_link       | https://github.com/ideadevice/quickstart­basic.git   |
+| App\_git\_link       | https://github.com/ideadevice/quickstart-basic.git   |
 +----------------------+------------------------------------------------------+
 
 Setup the variables as specified in the table above.
