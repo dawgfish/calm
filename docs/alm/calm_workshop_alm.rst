@@ -2,8 +2,6 @@
 Application lifecycle management (ALM)
 **************************************
 
-.. contents::
-
 Introduction
 ************
 
