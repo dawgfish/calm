@@ -10,7 +10,16 @@ Welcome to Calm Workshop's documentation!
    :maxdepth: 2
    :glob:
 
-   *
+   sdlc
+   alm
+   devops
+   orchestration
+   quiz
+
+   lab1
+   lab2
+   lab3
+   lab4 
 
 
 
