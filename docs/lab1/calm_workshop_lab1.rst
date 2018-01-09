@@ -1,5 +1,5 @@
 *********************************
-NuCalm – Simple Blueprint (MySQL)
+NuCalm Simple Blueprint (MySQL)
 *********************************
 
 
