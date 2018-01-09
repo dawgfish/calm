@@ -1,6 +1,6 @@
-********************************************
-Introduction – Intermediate Blueprint (LAMP)
-********************************************
+**************************************
+NuCalm – Intermediate Blueprint (LAMP)
+**************************************
 
 
 Connectivity Instructions
