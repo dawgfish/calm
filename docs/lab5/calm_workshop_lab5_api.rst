@@ -2,6 +2,7 @@
 NuCalm REST APIs
 ****************
 
+.. contents::
 
 Connectivity Instructions:
 **************************
