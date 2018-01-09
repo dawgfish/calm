@@ -1,6 +1,6 @@
-*****************************
-Install and Configure Ansible
-*****************************
+**************
+NuCalm Ansible
+**************
 
 .. toctree::
          :hidden:
