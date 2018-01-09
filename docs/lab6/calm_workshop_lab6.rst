@@ -5,8 +5,8 @@ Install and Configure Ansible on CentOS 7
 .. toctree::
          :hidden:
 
-         lab6/calm_workshop_ansible_module_development.rst
-         lab6/calm_workshop_ansible_dev.rst
+         lab6/calm_workshop_ansible_module_development
+         lab6/calm_workshop_ansible_dev
 
 Connectivity Instructions:
 **************************
