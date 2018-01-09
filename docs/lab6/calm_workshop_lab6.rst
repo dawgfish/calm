@@ -285,7 +285,7 @@ Navigate to Deploy-Ansible-Playbook_
 
 
 .. _configure-centos-server-v7: lab6/calm_workshop_lab6_config_centos
-.. _Deploy-Ansible-Playbook: lab6/calm_workshop_lab6_config_centos
+.. _Deploy-Ansible-Playbook: lab6/calm_workshop_lab6_deploy_ansible_module
 .. _password-less: lab6/calm_workshop_lab6_nopass
 
   
