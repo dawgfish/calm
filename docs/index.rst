@@ -23,6 +23,7 @@ Welcome to Calm Workshop's documentation!
    lab5 
    lab6 
    lab7 
+   lab8 
 
 
 
