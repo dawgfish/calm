@@ -1,6 +1,6 @@
-******************************
-Troubleshoot NuCalm Blueprints
-******************************
+********************************
+NuCalm - Troubleshoot Blueprints
+********************************
 
 
 Connectivity Instructions:
