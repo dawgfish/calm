@@ -2,7 +2,6 @@
 SSH Password-less Login – CentOS 7
 **********************************
 
-.. contents::
 
 Introducton
 ***********
