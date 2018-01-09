@@ -2,6 +2,7 @@
 NuCalm Troubleshoot Blueprints
 ********************************
 
+.. contents::
 
 Connectivity Instructions:
 **************************
