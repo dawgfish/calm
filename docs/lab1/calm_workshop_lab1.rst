@@ -2,6 +2,7 @@
 NuCalm Simple Blueprint (MySQL)
 *********************************
 
+.. contents::
 
 Connectivity Instructions:
 **************************
