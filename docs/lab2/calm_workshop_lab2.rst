@@ -1,5 +1,5 @@
 **************************************
-NuCalm – Intermediate Blueprint (LAMP)
+NuCalm Intermediate Blueprint (LAMP)
 **************************************
 
 
