@@ -20,6 +20,7 @@ Welcome to Calm Workshop's documentation!
    lab2
    lab3
    lab4 
+   lab5 
 
 
 
