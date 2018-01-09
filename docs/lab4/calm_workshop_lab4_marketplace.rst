@@ -1,6 +1,6 @@
-*********************************
-NuCalm Blueprint Marketplace Lab1
-*********************************
+*******************************
+NuCalm Blueprint Marketplace P1
+*******************************
 
 
 Connectivity Instructions:
