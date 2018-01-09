@@ -31,7 +31,7 @@ Requirements:
 
 Reference:
 
-- REST/HTTP Overview:  :doc:`REST-HTTP-Overview`.
+- REST/HTTP Overview:  REST-HTTP-Overview_
 - NTNX REST API Explorer Overview:  NTNX-REST-API-Explorer-Overview_
 - Chrome Web Browser + Developer Tools
 - Chrome JSON Editor: Chrome-JSON-Editor-Extension_
