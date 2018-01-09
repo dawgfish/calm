@@ -2,6 +2,7 @@
 NuCalm Intermediate Blueprint (LAMP)
 **************************************
 
+.. contents::
 
 Connectivity Instructions
 *************************
