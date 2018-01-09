@@ -2,6 +2,7 @@
 NuCalm Blueprint Marketplace P1
 *******************************
 
+.. contents::
 
 Connectivity Instructions:
 **************************
