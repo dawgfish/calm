@@ -31,7 +31,7 @@ Requirements:
 
 Reference:
 
-- REST/HTTP Overview: :doc: `calm_workshop_lab5_rest_overview`
+- REST/HTTP Overview: REST-HTTP-Overview_
 - NTNX REST API Explorer Overview:  NTNX-REST-API-Explorer-Overview_
 - Chrome Web Browser + Developer Tools
 - Chrome JSON Editor: Chrome-JSON-Editor-Extension_
@@ -660,7 +660,7 @@ STATE-CHANGE:
 
 
 .. _configure-centos-server-v7: ../lab6/calm_workshop_lab6_config_centos.rst
-.. _REST-HTTP-Overview: calm_workshop_lab5_rest_overview
+.. _REST-HTTP-Overview: lab5/calm_workshop_lab5_rest_overview
 .. _NTNX-REST-API-Explorer-Overview: calm_workshop_ntnx_api_explorer_overview.rst
 .. _Chrome-JSON-Editor-Extension: https://chrome.google.com/webstore/detail/json-editor/lhkmoheomjbkfloacpgllgjcamhihfaj?hl=en
 .. _Import-Blueprint.JSON: blueprints/importBlueprint.rst
