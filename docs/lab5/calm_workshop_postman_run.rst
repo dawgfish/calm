@@ -1,6 +1,6 @@
-*************************************
-**Postman Execute/Save REST Request**
-*************************************
+*********************************
+Postman Execute/Save REST Request
+*********************************
 
 Copy the *Request URL* from the NTNX REST API Explorer you want to execute and persist in Postman.
 
