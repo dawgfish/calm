@@ -153,26 +153,26 @@ Monitor the execution of the Applciation until complete.
 |image19|
 
 
-.. |image0| image:: ./media/image2.png
-.. |image1| image:: ./media/image14.png
-.. |image2| image:: ./media/image17.png
-.. |image3| image:: ./media/image16.png
-.. |image4| image:: ./media/image15.png
-.. |image5| image:: ./media/image18.png
-.. |image6| image:: ./media/image10.png
-.. |image20| image:: ./media/image11.png
-.. |image7| image:: ./media/image19.png
-.. |image8| image:: ./media/image20.png
-.. |image9| image:: ./media/image21.png
-.. |image10| image:: ./media/image22.png
-.. |image11| image:: ./media/image23.png
-.. |image12| image:: ./media/image24.png
-.. |image13| image:: ./media/image25.png
-.. |image14| image:: ./media/image26.png
-.. |image15| image:: ./media/image27.png
-.. |image16| image:: ./media/image28.png
-.. |image17| image:: ./media/image29.png
-.. |image18| image:: ./media/image30.png
-.. |image19| image:: ./media/image31.png
+.. |image0| image:: lab8/media/image2.png
+.. |image1| image:: lab8/media/image14.png
+.. |image2| image:: lab8/media/image17.png
+.. |image3| image:: lab8/media/image16.png
+.. |image4| image:: lab8/media/image15.png
+.. |image5| image:: lab8/media/image18.png
+.. |image6| image:: lab8/media/image10.png
+.. |image20| image:: lab8/media/image11.png
+.. |image7| image:: lab8/media/image19.png
+.. |image8| image:: lab8/media/image20.png
+.. |image9| image:: lab8/media/image21.png
+.. |image10| image:: lab8/media/image22.png
+.. |image11| image:: lab8/media/image23.png
+.. |image12| image:: lab8/media/image24.png
+.. |image13| image:: lab8/media/image25.png
+.. |image14| image:: lab8/media/image26.png
+.. |image15| image:: lab8/media/image27.png
+.. |image16| image:: lab8/media/image28.png
+.. |image17| image:: lab8/media/image29.png
+.. |image18| image:: lab8/media/image30.png
+.. |image19| image:: lab8/media/image31.png
 
 
