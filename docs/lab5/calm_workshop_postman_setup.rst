@@ -2,7 +2,6 @@
 Lab Configuration - Postman
 ***************************
 
-.. contents::
 
 Create Collection
 *****************
