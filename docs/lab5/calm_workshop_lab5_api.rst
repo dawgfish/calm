@@ -2,14 +2,6 @@
 NuCalm REST APIs
 ****************
 
- .. toctree::
-         :hidden:
-
-         calm_workshop_lab5_rest_overview.rst
-         calm_workshop_ntnx_api_explorer_overview.rst
-	 blueprints/importBlueprint.rst 
-	 calm_workshop_postman_setup.rst
-	 calm_workshop_postman_run.rst
 
 Connectivity Instructions:
 **************************
@@ -39,7 +31,7 @@ Requirements:
 
 Reference:
 
-- REST/HTTP Overview:  REST-HTTP-Overview_
+- REST/HTTP Overview:  :doc:`REST-HTTP-Overview`.
 - NTNX REST API Explorer Overview:  NTNX-REST-API-Explorer-Overview_
 - Chrome Web Browser + Developer Tools
 - Chrome JSON Editor: Chrome-JSON-Editor-Extension_
