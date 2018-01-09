@@ -32,7 +32,7 @@ Requirements:
 
 Reference:
 
-- REST/HTTP Overview: :doc:`/calm_workshop_lab5_rest_overview`.
+- REST/HTTP Overview: :doc:`REST Overview </calm_workshop_lab5_rest_overview.rst>`.
 - NTNX REST API Explorer Overview:  NTNX-REST-API-Explorer-Overview_
 - Chrome Web Browser + Developer Tools
 - Chrome JSON Editor: Chrome-JSON-Editor-Extension_
