@@ -1,6 +1,6 @@
-***************************************
-Introduction – Simple Blueprint (MySQL)
-***************************************
+*********************************
+NuCalm – Simple Blueprint (MySQL)
+*********************************
 
 
 Connectivity Instructions:
