@@ -1,6 +1,6 @@
-******************************************
-Initial Server Setup with CentOS Server v7
-******************************************
+***************************
+Setup with CentOS Server v7
+***************************
 
 
 Introduction
