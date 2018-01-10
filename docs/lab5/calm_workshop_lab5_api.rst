@@ -661,7 +661,7 @@ STATE-CHANGE:
 
 
 .. _configure-centos-server-v7: ../lab6/calm_workshop_lab6_config_centos
-.. _REST-HTTP-Overview: lab5/calm_workshop_lab5_rest_overview
+.. _REST-HTTP-Overview: _static/calm_workshop_lab5_rest_overview
 .. _NTNX-REST-API-Explorer-Overview: lab5/calm_workshop_ntnx_api_explorer_overview
 .. _Chrome-JSON-Editor-Extension: https://chrome.google.com/webstore/detail/json-editor/lhkmoheomjbkfloacpgllgjcamhihfaj?hl=en
 .. _Import-Blueprint.JSON: lab5/blueprints/importBlueprint
