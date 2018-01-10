@@ -40,8 +40,8 @@ Requirements:
 
 Reference:
 
-- REST/HTTP Overview: REST-HTTP-Overview
-- NTNX REST API Explorer Overview:  NTNX-REST-API-Explorer-Overview
+- REST/HTTP Overview: REST-HTTP-Overview_
+- NTNX REST API Explorer Overview:  NTNX-REST-API-Explorer-Overview_
 - Chrome Web Browser + Developer Tools
 - Chrome JSON Editor: Chrome-JSON-Editor-Extension_
 
@@ -670,8 +670,8 @@ STATE-CHANGE:
 .. _Chrome-JSON-Editor-Extension: https://chrome.google.com/webstore/detail/json-editor/lhkmoheomjbkfloacpgllgjcamhihfaj?hl=en
 .. _Import-Blueprint.JSON: lab5/blueprints/importBlueprint
 
-.. _configure-postman: lab5/calm_workshop_postman_setup
-.. _postman-execution: lab5/calm_workshop_postman_run
+.. _configure-postman: `Lab Configuration - Postman`
+.. _postman-execution: `Postman Execute/Save REST Request`
 
 .. |image0| image:: lab5/media/image1.png
 .. |image1| image:: lab5/media/image5.png
