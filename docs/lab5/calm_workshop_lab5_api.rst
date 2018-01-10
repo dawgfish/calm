@@ -32,7 +32,7 @@ Requirements:
 
 Reference:
 
-- REST/HTTP Overview:  REST-HTTP-Overview_
+- REST/HTTP Overview: :doc: REST-HTTP-Overview_
 - NTNX REST API Explorer Overview:  NTNX-REST-API-Explorer-Overview_
 - Chrome Web Browser + Developer Tools
 - Chrome JSON Editor: Chrome-JSON-Editor-Extension_
@@ -659,7 +659,6 @@ STATE-CHANGE:
 - Launch Blueprint
 - Delete an App
 
-.. include:: calm_workshop_lab5_rest_overview.rst
 .. _configure-centos-server-v7: ../lab6/calm_workshop_lab6_config_centos
 .. _REST-HTTP-Overview: calm_workshop_lab5_rest_overview
 .. _NTNX-REST-API-Explorer-Overview: lab5/calm_workshop_ntnx_api_explorer_overview
