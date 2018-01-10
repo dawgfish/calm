@@ -2,7 +2,16 @@
 NuCalm REST APIs
 ****************
 
-.. contents::
+.. toctree::
+   :hidden:
+
+   ../lab6/calm_workshop_lab6_config_centos
+   calm_workshop_lab5_rest_overview
+   calm_workshop_ntnx_api_explorer_overview
+   blueprints/importBlueprint
+   calm_workshop_postman_setup
+   calm_workshop_postman_run
+
 
 Connectivity Instructions:
 **************************
