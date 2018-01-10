@@ -6,11 +6,11 @@ NuCalm REST APIs
    :hidden:
 
    ../lab6/calm_workshop_lab6_config_centos
-   calm_workshop_lab5_rest_overview
-   calm_workshop_ntnx_api_explorer_overview
-   blueprints/importBlueprint
-   calm_workshop_postman_setup
-   calm_workshop_postman_run
+   lab5/calm_workshop_lab5_rest_overview
+   lab5/calm_workshop_ntnx_api_explorer_overview
+   lab5/blueprints/importBlueprint
+   lab5/calm_workshop_postman_setup
+   lab5/calm_workshop_postman_run
 
 
 Connectivity Instructions:
@@ -41,14 +41,14 @@ Requirements:
 
 Reference:
 
-- REST/HTTP Overview: REST-HTTP-Overview_
-- NTNX REST API Explorer Overview:  NTNX-REST-API-Explorer-Overview_
+- REST/HTTP Overview: REST-HTTP-Overview
+- NTNX REST API Explorer Overview:  NTNX-REST-API-Explorer-Overview
 - Chrome Web Browser + Developer Tools
 - Chrome JSON Editor: Chrome-JSON-Editor-Extension_
 
 Development:
 
-- CentOS Server v7 VM created:  configure-centos-server-v7_ 
+- CentOS Server v7 VM created:  configure-centos-server-v7
 - Python 2.7.x
 - Git Hub Account: https://github.com
 
