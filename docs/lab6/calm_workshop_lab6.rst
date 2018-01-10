@@ -3,12 +3,12 @@ NuCalm Ansible
 **************
 
 .. toctree::
-         :hidden:
+     :hidden:
 
-         lab6/calm_workshop_ansible_architecture
-         lab6/calm_workshop_ansible_modules
-         lab6/calm_workshop_lab6_config_centos
-         lab6/calm_workshop_lab6_nopass
+      lab6/calm_workshop_ansible_architecture
+      lab6/calm_workshop_ansible_modules
+      lab6/calm_workshop_lab6_config_centos
+      lab6/calm_workshop_lab6_nopass
         
 Connectivity Instructions:
 **************************
