@@ -3,12 +3,11 @@ NuCalm REST APIs
 ****************
 
 .. toctree::
-   :hidden:
+     :hidden:
 
    ../lab6/calm_workshop_lab6_config_centos
    lab5/calm_workshop_lab5_rest_overview
    lab5/calm_workshop_ntnx_api_explorer_overview
-   lab5/blueprints/importBlueprint
    lab5/calm_workshop_postman_setup
    lab5/calm_workshop_postman_run
 
@@ -668,9 +667,6 @@ STATE-CHANGE:
 - Launch Blueprint
 - Delete an App
 
-.. _configure-centos-server-v7: ../lab6/calm_workshop_lab6_config_centos
-.. _REST-HTTP-Overview: lab5/calm_workshop_lab5_rest_overview
-.. _NTNX-REST-API-Explorer-Overview: lab5/calm_workshop_ntnx_api_explorer_overview
 .. _Chrome-JSON-Editor-Extension: https://chrome.google.com/webstore/detail/json-editor/lhkmoheomjbkfloacpgllgjcamhihfaj?hl=en
 .. _Import-Blueprint.JSON: lab5/blueprints/importBlueprint
 
