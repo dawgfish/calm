@@ -670,8 +670,8 @@ STATE-CHANGE:
 .. _Chrome-JSON-Editor-Extension: https://chrome.google.com/webstore/detail/json-editor/lhkmoheomjbkfloacpgllgjcamhihfaj?hl=en
 .. _Import-Blueprint.JSON: lab5/blueprints/importBlueprint
 
-.. _configure-postman: `Lab Configuration - Postman`
-.. _postman-execution: `Postman Execute/Save REST Request`
+.. _configure-postman: 'Lab Configuration - Postman'
+.. _postman-execution: 'Postman Execute/Save REST Request'
 
 .. |image0| image:: lab5/media/image1.png
 .. |image1| image:: lab5/media/image5.png
