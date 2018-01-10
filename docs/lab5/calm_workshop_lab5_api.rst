@@ -668,7 +668,7 @@ STATE-CHANGE:
 - Delete an App
 
 .. _Chrome-JSON-Editor-Extension: https://chrome.google.com/webstore/detail/json-editor/lhkmoheomjbkfloacpgllgjcamhihfaj?hl=en
-.. _Import-Blueprint.JSON: lab5/blueprints/importBlueprint
+.. _Import-Blueprint.JSON: lab5/blueprints/importBlueprint.html
 
 .. _REST-HTTP-Overview: lab5/calm_workshop_lab5_rest_overview.html
 .. _NTNX-REST-API-Explorer-Overview: lab5/calm_workshop_ntnx_api_explorer_overview.html
