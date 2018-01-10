@@ -42,8 +42,8 @@ Prerequisites
 
 To follow this tutorial, you will need:
 
-- One CentOS v7 server to host Ansible. Follow the steps in configure-centos-server-v7_ to create a non-root user.
-- Make sure you can connect to the server using a password-less_ connection/session.
+- One CentOS v7 server to host Ansible. Follow the steps in configure-centos-server-v7 to create a non-root user.
+- Make sure you can connect to the server using a password-less connection/session.
 
 Step 1 — Installing Ansible
 ***************************
