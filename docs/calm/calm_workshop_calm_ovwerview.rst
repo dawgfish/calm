@@ -175,17 +175,28 @@ Publishers have various overlapping incentives to build Blueprints.
 
 |image1|
 
+
+**Publisher Friction**
+
+We need to make publishing as frictionless as possible. This will need:
+
+1.	Simplified and human writable Blueprint code
+2.	Complete command line tooling
+3.	Offline development (without connecting to central server or running full NuCalm server)
+4.	Lightweight and fast
+5.	Integration into modern development workflows (Version Control, Code Reviews, Smoke Tests)
+
+**Consumers**
+
+Consumers use the published blueprints to deploy and manage Apps.
+
+Consumer Workflow:
+
+|image2|
+
+
 .. |image0| image:: ./media/image1.png
 .. |image1| image:: ./media/image2.png
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About
+.. |image2| image:: ./media/image3.png
+
+
