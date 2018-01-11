@@ -14,7 +14,6 @@ Welcome to Calm Workshop's documentation!
    alm
    devops
    orchestration
-   calm
    quiz
 
    lab1
