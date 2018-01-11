@@ -5,10 +5,9 @@ NuCalm Ansible
 .. toctree::
      :maxdepth: 2
      :glob:
-
-
-      lab6/calm_workshop_ansible_architecture
-      lab6/calm_workshop_ansible_modules
+     
+     lab6/calm_workshop_ansible_architecture
+     lab6/calm_workshop_ansible_modules
   
         
 Connectivity Instructions:
