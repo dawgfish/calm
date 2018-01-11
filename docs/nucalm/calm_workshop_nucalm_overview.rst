@@ -195,8 +195,8 @@ Consumer Workflow:
 |image2|
 
 
-.. |image0| image:: nucalm/media/image1.png
-.. |image1| image:: nucalm/media/image2.png
-.. |image2| image:: nucalm/media/image3.png
+.. |image0| image:: ./nucalm/media/image1.png
+.. |image1| image:: ./nucalm/media/image2.png
+.. |image2| image:: ./nucalm/media/image3.png
 
 
