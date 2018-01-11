@@ -3,12 +3,13 @@ NuCalm Ansible
 **************
 
 .. toctree::
-     :hidden:
+     :maxdepth: 2
+     :glob:
+
 
       lab6/calm_workshop_ansible_architecture
       lab6/calm_workshop_ansible_modules
-      lab6/calm_workshop_lab6_config_centos
-      lab6/calm_workshop_lab6_nopass
+  
         
 Connectivity Instructions:
 **************************
@@ -42,8 +43,8 @@ Prerequisites
 
 To follow this tutorial, you will need:
 
-- One CentOS v7 server to host Ansible. Follow the steps in configure-centos-server-v7 to create a non-root user.
-- Make sure you can connect to the server using a password-less connection/session.
+- One CentOS v7 server to host Ansible. Follow the steps in configure-centos-server-v7_ to create a non-root user.
+- Make sure you can connect to the server using a password-less_ connection/session.
 
 Step 1 — Installing Ansible
 ***************************
@@ -323,7 +324,8 @@ You should see a simple test page and a list of databases retrieved from the
 database server.
 
   
-
+.. _configure-centos-server-v7: lab6/calm_workshop_lab6_config_centos.html
+.. _password-less: lab6/calm_workshop_lab6_nopass.html
 
 
 
