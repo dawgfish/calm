@@ -195,8 +195,8 @@ Consumer Workflow:
 |image2|
 
 
-.. |image0| image:: calm/media/image1.png
-.. |image1| image:: calm/media/image2.png
-.. |image2| image:: calm/media/image3.png
+.. |image0| image:: calm_intro/media/image1.png
+.. |image1| image:: calm_intro/media/image2.png
+.. |image2| image:: calm_intro/media/image3.png
 
 
