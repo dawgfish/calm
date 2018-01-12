@@ -5,68 +5,72 @@ Calm
 Overview
 ********
 
-NuCalm will allow Nutanix Enterprise customers to seamlessly select, provision, deploy & manage their Business Apps across all their infrastructure, both private and public cloud. NuCalm ties together an AppStore, App Lifecycle, Monitoring & Remediation by providing single pane of glass for managing heterogeneous infrastructure, be it VMs or containers, or even baremetal servers. NuCalm will eventually support all the components required to manage a complete Software Defined Data Center. 
+NuCalm allows Nutanix Enterprise customers to seamlessly select, provision, deploy & manage their Business Apps across all their infrastructure, both private and public cloud. NuCalm ties together an AppStore, App Lifecycle, Monitoring & Remediation by providing single control-point for managing heterogeneous infrastructure, be it VMs or containers, or even baremetal servers. NuCalm will eventually support all the components required to manage a complete Software Defined Data Center. 
 
 |image3|
 
-To enable adoption and encourage enterprises to use our platform, NuCalm will not restrict itself to Nutanix (AHV/Xi), but support multiple platforms used by customers so that customers get used to a single self-service and automation interface via which they can interact with all their infrastructure and use it as a bridge to move more and more into the Nutanix ecosystem and future offerings.
+To enable adoption and encourage enterprises to use the NTNX platform, NuCalm will not restrict itself to Nutanix (AHV/Xi), but support multiple platforms used by customers so that customers get used to a single self-service and automation interface via which they can interact with all their infrastructure and use it as a bridge to move more and more into the Nutanix ecosystem and future offerings.
 
-NuCalm will be deployed alongside SSP in the Prism Central VM. NuCalm will consume multiple Nutanix internal services and will not be a standalone component. By extension, users must have a Nutanix Prism Central VM to enable NuCalm functionality.
+NuCalm is deployed alongside SSP in the Prism Central VM. NuCalm consumes multiple Nutanix internal services and is not a standalone component. By extension, users must have a Nutanix Prism Central VM to enable NuCalm functionality.
 
 WHAT: NuCalm Components
 ***********************
 
 **Application-focus**
 
-NuCalm is an application-centric view of IT infrastructure, as compared to the existing VM-centric views for most IT management planes. As IT moves to microservices with a focus on self-service and the business user, the business increasingly consumes applications, not the VMs or containers underlying the application. The basic unit of creation within NuCalm is the application, with a single VM being a simpler application with n=1. Applications containing multiple VMs or containers are provisioned, managed and deleted as a set instead of independent units. 
+NuCalm is an application-centric view of IT infrastructure, as compared to the existing VM-centric views for most IT management planes. As IT evolves to microservices with a focus on self-service and the business user, the business increasingly consumes applications, not the VMs or containers underlying the application. The basic unit of creation within NuCalm is the application, with a single VM being a simpler application with n=1. Applications containing multiple VMs or containers are provisioned, managed and deleted as a set instead of independent units. 
+
 NuCalm understands dependencies between components in an application, allowing it to manage and perform multi-VM operations at an application level. Changes like scale up for one component propagate across the application, with NuCalm resolving other tasks like editing load balancers appropriately.
 
 1-Click application provisioning is possible with NuCalm’s application-focused interface, whether the application is a single VM or multiple VMs being provisioned in the backend. 
 
 **AppStore**
 
-NuCalm will contain a global AppStore which is a marketplace to publish and consume applications. While initially Nutanix and select partners will publish applications to this AppStore, over time, we will open up this AppStore to a larger group of partners and developers.
+NuCalm contains a global AppStore which is a marketplace to publish and consume applications. While initially Nutanix and select partners will publish applications to this AppStore, over time, NTNX will open up this AppStore to a larger group of partners and developers.
 
-Publishers will upload their application designs (a.k.a. blueprints) to the Marketplace. After review, these will be published and made available to consumers who choose to select and launch these applications in theiedr infrastructure. 
-Application blueprints will contain the procure to provision the application across 1 or more platforms, procedures to upgrade, scale up and scale down the app as well as other common operations performed on the application by operations and devops teams. 
-Admins will be able to whitelist blueprints, design and publish their own application blueprints for internal consumption, and be able to launch these blueprints across multiple-clouds.
+Publishers can upload their application designs (a.k.a. blueprints) to the Marketplace. After review, these will be published and made available to consumers who choose to select and launch these applications within thier infrastructure. 
+
+Application blueprints contain the instrumentation to provision the application across 1 or more platforms, procedures to upgrade, scale up and scale down the app as well as other common operations performed on the application by operations and devops teams. 
+
+Admins can whitelist blueprints, design and publish their own application blueprints for internal consumption, and be able to launch these blueprints across multiple-clouds.
 
 **Multi-cloud**
 
-NuCalm will support multiple hypervisors and cloud providers, while being Nutanix-first in terms of supporting AHV and Xi for a great user experience. Notions for other providers like AWS, Azure etc would be supported, whether they exist in AHV/Xi today or not. E.g. A user can use NuCalm across AHV and AWS, but won’t get the feature goodness or convenience offered by the deeper AHV and Xi integration from Nutanix.
+NuCalm will eventually support multiple hypervisors and cloud providers, while being Nutanix-first in terms of supporting AHV, Xi, and AWS for a great user experience. Notions for other providers like AWS, Azure etc would be supported, whether they exist in AHV/Xi today or not. E.g. A user can use NuCalm across AHV and AWS, but won’t get the feature goodness or convenience offered by the deeper AHV and Xi integration from Nutanix.
 
 Provider support will be based on customer requirements, with initial targets being AHV/AWS (1.0), followed quickly by ESXi, Xi and then other platforms (Openstack, AzureStack,…).
 
 **App Mobility**
 
-NuCalm will also enable Nutanix’s App Mobility Fabric as all of its features come together. For applications where we have access to the storage layer (on AHV/Xi), we’ll be able to leverage deeper features of the Nutanix platform to provide seamless mobility across hybrid cloud for customers. On platforms where we have restricted access to storage, the application ‘move’ may involve redeploying the application on the new cloud based on a triggering event. The exact mechanism and scope for this is still TBD.
+NuCalm also enables Nutanix’s App Mobility Fabric as all of its features come together. For applications where we have access to the storage layer (on AHV/Xi), we’ll be able to leverage deeper features of the Nutanix platform to provide seamless mobility across hybrid cloud for customers. On platforms where we have restricted access to storage, the application ‘moves’ may involve redeploying the application on the new cloud based on a triggering event. The exact mechanism and scope for this is still TBD.
 
 **Runbooks**
 
-Using the NuCalm orchestration engine (a.k.a. Epsilon), NuCalm will enable runbook orchestration across services and applications in the customer’s hybrid cloud infrastructure. Runbooks can be triggered both manually by end-users based on role-based access or hooked up to monitoring and service-desk tools for automated execution. NuCalm will display streaming logs for activities being performed and maintain audit logs for all operations performed by users in the system.
-The runbook engine can also be called out to by internal entities within the Nutanix system to perform orchestration tasks using its capabilities.
+Using the NuCalm orchestration engine (a.k.a. Epsilon), NuCalm enables runbook orchestration across services and applications in the customer’s hybrid cloud infrastructure. Runbooks can be triggered both manually by end-users based on role-based access or hooked up to monitoring and service-desk tools for automated execution. NuCalm will display streaming logs for activities being performed and maintain audit logs for all operations performed by users in the system.
+
+The runbook engine will also be called out to by internal entities within the Nutanix system to perform orchestration tasks using its capabilities.
 
 **Environments**
 
-NuCalm will provide support for multiple environments in the customer datacenter (dev/QA/staging/production etc). Each environment will have its own constraints and the same blueprint may be deployed at a different scale or on a different provider depending on the user role and environment requested. This will also enable the usage of NuCalm for building more complex CI/CD pipelines for customer infrastructure. 
+NuCalm provides support for multiple environments in the customer datacenter (dev/QA/staging/production etc). Each environment will have its own constraints and the same blueprint may be deployed at a different scale or on a different provider depending on the user role and environment requested. This will also enable the usage of NuCalm for building more complex CI/CD pipelines for customer infrastructure. 
 
 **CI-CD Pipelines**
 
-NuCalm will enable continuous integration and deployment pipelines across multiple environments for customers. With potential Jenkins integration, customers will be able to track the progress of code commits across multiple environments for each application, and be able to have an automated process (with approvals) for end-to-end deployment across their infrastructure.
+NuCalm enables continuous integration and deployment pipelines across multiple environments for customers. With potential Jenkins integration, customers will be able to track the progress of code commits across multiple environments for each application, and be able to have an automated process (with approvals) for end-to-end deployment across their infrastructure.
 
 **Budgets**
 
 NuCalm provides a chargeback and budgeting mechanism via the budgets entity. For private clouds (AHV/ESXi), it lets the user define the costs (per vCPU/GB RAM/GB storage) of infrastructure per cluster and builds a consumption model based on its usage by business groups. For public clouds (Xi/AWS), NuCalm tracks approximate usage via available platform APIs, showing overall expenditure across hybrid clouds as a single unified view. IT can add a surcharge to the public cloud cost to account for software licensing and management overhead that they may incur.
 
-Quotas will be supported in NuCalm v1.0, carried over from SSP. However, over time, we expect to deprecate these and move customers over to thinking about all their application VMs and infrastructure in $ terms. 
+Quotas are supported in NuCalm v1.0, carried over from SSP. However, over time, NTNX expects to deprecate these and move customers over to thinking about all their application VMs and infrastructure in $ terms. 
 
 **Policy Engine**
 
-The NuCalm policy engine will add a global layer of policy-based controls to the self-service and automation interface. Multiple policy-types will be added over time, with custom policies also being made available to users so they can roll their own. The below is an indicative snapshot of the policies we can add, with more getting added to the system based on customer feedback.
+The NuCalm policy engine adds a global layer of policy-based controls to the self-service and automation interface. Multiple policy-types will be added over time, with custom policies also being made available to users so they can roll their own. The below is an indicative snapshot of the policies we can add, with more getting added to the system based on customer feedback.
 
 - Expiry
 
-Expiry policies will control the lifetime of the applications provisioned using NuCalm. Admins can control and set this to a hard date or a relative value. Expiry extensions can be requested and must be approved by the admin of the system. 
+Expiry policies control the lifetime of the applications provisioned using NuCalm. Admins can control and set this to a hard date or a relative value. Expiry extensions can be requested and must be approved by the admin of the system. 
 
 - Underutilized Infra
 
@@ -94,31 +98,42 @@ Notifications in the NuCalm system are similar to approvals, but are non-blockin
 
 **Licensing**
 
-Licensing for NuCalm is TBD and will be a separate document.
+Licensing for NuCalm: 
+
+- Separate SKU, works with both Prism Starter & Pro
+
+- Perpetual Free Tier (25VMs per customer)
+
+- All Features enabled.
+
+- Sold as VM Packs of 25VMs each:  $250/vm/yr (including support).  Customers don’t need to license for every VM, only the ones they want to automate via Calm.
+
+- Uniform Pricing for Simplicity with Hybrid Cloud
 
 WHY: NuCalm Reasoning
 *********************
 
 **Competition**
 
-We intend to build NuCalm as an opinionated and UX-first automation layer that enables our customers to manage their federated infrastructure. 
+NuCalm is an opinionated and UX-first automation layer that enables NTNX customers to manage their federated infrastructure. 
 
-Our competition in the automation and orchestration plane is NOT VMware vRA. As we launch Xi and bring NuCalm to Prism on-prem and the Xi control plane, the competition will be AWS foremost, with the possibility of smaller startups out-innovating us as a company. This is why NuCalm will not be benchmarked to vRA features, though we will prioritize features as per customer requirements for the Enter 
+NTNX competition in the automation and orchestration plane is NOT VMware vRA. As we launch Xi and bring NuCalm to Prism on-prem and the Xi control plane, the competition will be AWS foremost, with the possibility of smaller startups out-innovating NTNX as a company. This is why NuCalm is not be benchmarked to vRA features, though NTNX will prioritize features as per customer requirements for the Entery.
 
 **Application-Focus**
 
-As Nutanix moves up the stack from the IT infrastructure team towards devops and then to the business user, we need to provide context that the business user understands. With an application focus, the end-user, who does not understand the specifics of public and private cloud, can request exactly the application that is needed. This does not assume any knowledge about how the application is architected or how many VMs or containers are being provisioned in the backend. A simple consumption model where the user files a request and is charged as per usage is what we aim to provide with the NuCalm interface. 
+As Nutanix moves up the stack from the IT infrastructure team towards devops and then to the business user, NTNX will provide context that the business user understands. With an application focus, the end-user, who does not understand the specifics of public and private cloud, can request exactly the application that is needed. This does not assume any knowledge about how the application is architected or how many VMs or containers are being provisioned in the backend. A simple consumption model where the user files a request and is charged as per usage is what we aim to provide with the NuCalm interface. 
+
 The Nutanix Enterprise OS abstracts away all these notions and bridges the gap between the private and the public cloud with a consumption focus.
 
 **AppStore**
 
-One of the main challenges that hampers adoption of automation tooling is the initial bootstrapping and upfront work needed to save man-hours in the future. To enable an easy on-ramp, NuCalm needs to have the ability to provide a library of readymade template blueprints consisting of commonly used applications. These can be consumed directly by customer DevOps or used as lego blocks and edited as per requirements to model custom enterprise applications.
+One of the main challenges that hampers adoption of automation tooling is the initial bootstrapping and upfront work needed to save man-hours in the future. To enable an easy on-ramp, NuCalm has the ability to provide a library of readymade template blueprints consisting of commonly used applications. These can be consumed directly by customer DevOps or used as lego blocks and edited as per requirements to model custom enterprise applications.
 
-The ability to quickly try out partner and third-party applications helps us build a 2-sided marketplace with our users, enabling higher usefulness for the platform as a whole. This is a powerful model, since it also enables our end-users to quickly satisfy requests for modern applications from developers, without having to first do a month-long deep dive into how to get the specific application up and running.
+The ability to quickly try out partner and third-party applications helps NTNX build a 2-sided marketplace with our users, enabling higher usefulness for the platform as a whole. This is a powerful model, since it also enables our end-users to quickly satisfy requests for modern applications from developers, without having to first do a month-long deep dive into how to get the specific application up and running.
 
 **Multi-cloud**
 
-Most enterprises are either already using multiple cloud providers or evaluating options across both newer and legacy infrastructure. Customers prefer to have a single automation plane across all their infrastructure, not just Nutanix AHV. Most of our customers will have both AHV and VMware, with Xi and upcoming AWS also in use. In such cases, NuCalm will provide an onramp to our customers onto both AHV and Xi from other clouds. All our AppStore blueprints will be configured for Nutanix as the primary choice. 
+Most enterprises are either already using multiple cloud providers or evaluating options across both newer and legacy infrastructure. Customers prefer to have a single automation plane across all their infrastructure, not just Nutanix AHV. Most of our customers will have both AHV and VMware, with Xi and upcoming AWS also in use. In such cases, NuCalm provides an onramp to our customers onto both AHV and Xi from other clouds. All NTNX AppStore blueprints are configured for Nutanix as the primary choice. 
 
 Having NuCalm as the common management plane also ensures that no matter what other provider the customer uses, the Nutanix management and automation plane still provides value to the customer.
 
