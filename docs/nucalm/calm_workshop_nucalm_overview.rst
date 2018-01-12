@@ -353,7 +353,7 @@ Consumer Workflow:
 .. |image0| image:: nucalm/media/image1.png
 .. |image1| image:: nucalm/media/image2.png
 .. |image2| image:: nucalm/media/image3.png
-.. |image3| image:: nucalm/media/image6.png
+.. |image3| image:: nucalm/media/image10.png
 .. |image4| image:: nucalm/media/image8.png
 .. |image5| image:: nucalm/media/image9.png
 
