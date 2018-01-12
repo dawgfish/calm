@@ -7,6 +7,8 @@ Overview
 
 NuCalm will allow Nutanix Enterprise customers to seamlessly select, provision, deploy & manage their Business Apps across all their infrastructure, both private and public cloud. NuCalm ties together an AppStore, App Lifecycle, Monitoring & Remediation by providing single pane of glass for managing heterogeneous infrastructure, be it VMs or containers, or even baremetal servers. NuCalm will eventually support all the components required to manage a complete Software Defined Data Center. 
 
+|image3|
+
 To enable adoption and encourage enterprises to use our platform, NuCalm will not restrict itself to Nutanix (AHV/Xi), but support multiple platforms used by customers so that customers get used to a single self-service and automation interface via which they can interact with all their infrastructure and use it as a bridge to move more and more into the Nutanix ecosystem and future offerings.
 
 NuCalm will be deployed alongside SSP in the Prism Central VM. NuCalm will consume multiple Nutanix internal services and will not be a standalone component. By extension, users must have a Nutanix Prism Central VM to enable NuCalm functionality.
@@ -161,10 +163,9 @@ Generators. Examples are AWS, vCenter, Azure.
 
 **Blueprints**
 
-Blueprints are App Recipes. These recipes encompass App Architecture, Infrastructure choices, Provisioning & Deployment 
-steps, App Bits, Command steps, Monitoring endpoints, Remediation steps, Licensing & Monetization, Policies. Every time a 
-Blueprint is executed it gives rise to an App.
+Blueprints are App Recipes. These recipes encompass App Architecture, Infrastructure choices, Provisioning & Deployment steps, App Bits, Command steps, Monitoring endpoints, Remediation steps, Licensing & Monetization, Policies. Every time a  Blueprint is executed it gives rise to an App.
 
+|image4|
 
 **App**
 
@@ -180,37 +181,54 @@ ii.	Fetch the App Bits
 iii.	Deploy & Configure the App Bits on infrastructure components
 iv.	Run the Sanity Checks
 
-2. Running: After instantiation, the App is up and running. In running stage the application needs periodic Command steps
-to keep it healthy and operational. These include upgrades, scale-up, scale-down, start, stop, backup (i.e. common App 
-specific actions defined in the blueprint).
+2. Running: After instantiation, the App is up and running. In running stage the application needs periodic Command steps to keep it healthy and operational. These include upgrades, scale-up, scale-down, start, stop, backup (i.e. common App specific actions defined in the blueprint).
 
-3. Destruction: At a certain point the instantiated App is no longer useful. A destruction (or delete) operation undoes 
-all the creation steps, makes sure all the tied up resources (Infrastructure) is returned to the common pool
+3. Destruction: At a certain point the instantiated App is no longer useful. A destruction (or delete) operation undoes all the creation steps, makes sure all the tied up resources (Infrastructure) is returned to the common pool
 
 
 **Blueprint Components**
 
 Important components:
 
-1. App Architecture: App architecture specifies how the different components in the target App are connected. This comprises of nodes of different types (compute, storage, network) and the connections between them.
+1. App Architecture: 
 
-2. Infrastructure choices: Any useful blueprint needs Infrastructure for instantiation. A blueprint can specify the exact infrastructure needed (n AWS VM, m Nutanix VM), a predefined palette or can be completely left to user to specify at instantiation time (late binding). The blueprint developer can also specify policies (or constraints) on the type of infrastructure needed. The platform will not let a blueprint be instantiated if the policies are not met. Other additional policies can be overlaid on the blueprint specified ones later, depending on the organisation setup.
+App architecture specifies how the different components in the target App are connected. This comprises of nodes of different types (compute, storage, network) and the connections between them.
 
-3. Provisioning steps: Provisioning is the action of creating infrastructure components (VMs, Firewalls, Containers, Storage,...). Provisioning is usually performed by calling out the Provider specific APIs or commands.
+2. Infrastructure choices: 
 
-4. App Bits: App Bits are the actual software needed for the application to run. A blueprint should have URIs pointing to repositories from where the actual bits are fetched. A blueprint should not bundle the application bits, for size & IP concerns.
+Any useful blueprint needs Infrastructure for instantiation. A blueprint can specify the exact infrastructure needed (n AWS VM, m Nutanix VM), a predefined palette or can be completely left to user to specify at instantiation time (late binding). The blueprint developer can also specify policies (or constraints) on the type of infrastructure needed. The platform will not let a blueprint be instantiated if the policies are not met. Other additional policies can be overlaid on the blueprint specified ones later, depending on the organisation setup.
 
-5. Deployment steps: Deployment steps are the commands/scripts needed to setup the App bits to run on the provisioned infrastructure. These are the steps run on each node of infrastructure to setup the node-specific software. Since some of these nodes are virtual endpoints (S3 buckets) these steps can also be specified in terms of API operations that virtual endpoint supports.
+3. Provisioning steps: 
 
-6. Command Steps: Command steps are common actions needed to maintain an application. Some of these steps run only on one node in the application while others are multi-node orchestrated flows. Examples include: upgrade, scale-up, scale-down, backup, restore, start, stop. Most of these Commands are specified by the Blueprint developer but the end consumer (with appropriate permissions) should be able to add more to simplify their common use-cases.
+Provisioning is the action of creating infrastructure components (VMs, Firewalls, Containers, Storage,...). Provisioning is usually performed by calling out the Provider specific APIs or commands.
 
-7. Monitoring Endpoints: A blueprint optionally includes the steps needed to configure common monitoring solutions to setup monitoring for the newly deployed App. The blueprint specifies health checks and metrics along with warning & error thresholds for each node. In addition the blueprint specifies endpoints into the NuCalm platform where monitoring should feed alerts and other data.
+4. App Bits: 
 
-8. Remediation steps: Remediation steps are needed to get the App to a healthy stage after monitoring or NuCalm detects runtime errors or alerts. They are triggered by data from the underlying platform or monitoring endpoints.
+App Bits are the actual software needed for the application to run. A blueprint should have URIs pointing to repositories from where the actual bits are fetched. A blueprint should not bundle the application bits, for size & IP concerns.
 
-9. Licensing & Monetization: A blueprint needs to include machine-readable bits on its licensing restrictions. This informs NuCalm if the blueprint is editable or shareable by the consumer. NuCalm can hide the actual scripts from the consumer if  so specified. Monetization decides if the blueprint publisher charges a cost for using it. See Chargeback.
+5. Deployment steps: 
 
-10. Policies: Policies are requirements for other different components for a blueprint. Policies specify what meta-objectives have to be met for a successful instantiation and use. For example, a policy can specify that the desired App can be instantiated on on-prem Infrastructure, or that a specific node type always requires more than 4 GB RAM.
+Deployment steps are the commands/scripts needed to setup the App bits to run on the provisioned infrastructure. These are the steps run on each node of infrastructure to setup the node-specific software. Since some of these nodes are virtual endpoints (S3 buckets) these steps can also be specified in terms of API operations that virtual endpoint supports.
+
+6. Command Steps: 
+
+Command steps are common actions needed to maintain an application. Some of these steps run only on one node in the application while others are multi-node orchestrated flows. Examples include: upgrade, scale-up, scale-down, backup, restore, start, stop. Most of these Commands are specified by the Blueprint developer but the end consumer (with appropriate permissions) should be able to add more to simplify their common use-cases.
+
+7. Monitoring Endpoints: 
+
+A blueprint optionally includes the steps needed to configure common monitoring solutions to setup monitoring for the newly deployed App. The blueprint specifies health checks and metrics along with warning & error thresholds for each node. In addition the blueprint specifies endpoints into the NuCalm platform where monitoring should feed alerts and other data.
+
+8. Remediation steps: 
+
+Remediation steps are needed to get the App to a healthy stage after monitoring or NuCalm detects runtime errors or alerts. They are triggered by data from the underlying platform or monitoring endpoints.
+
+9. Licensing & Monetization: 
+
+A blueprint needs to include machine-readable bits on its licensing restrictions. This informs NuCalm if the blueprint is editable or shareable by the consumer. NuCalm can hide the actual scripts from the consumer if  so specified. Monetization decides if the blueprint publisher charges a cost for using it. See Chargeback.
+
+10. Policies: 
+
+Policies are requirements for other different components for a blueprint. Policies specify what meta-objectives have to be met for a successful instantiation and use. For example, a policy can specify that the desired App can be instantiated on on-prem Infrastructure, or that a specific node type always requires more than 4 GB RAM.
 
 
 **AppStore**
@@ -335,5 +353,8 @@ Consumer Workflow:
 .. |image0| image:: nucalm/media/image1.png
 .. |image1| image:: nucalm/media/image2.png
 .. |image2| image:: nucalm/media/image3.png
+.. |image3| image:: nucalm/media/image6.png
+.. |image4| image:: nucalm/media/image8.png
+.. |image5| image:: nucalm/media/image9.png
 
 
