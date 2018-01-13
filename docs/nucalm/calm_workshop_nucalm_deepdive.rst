@@ -135,10 +135,10 @@ For example:
 
 Pass the script to a Lexer which will have two states:
 
-- **INITIAL**
+**INITIAL**
 The only token here will be ‘@@{’ which will switch the lexer to ACTIVE state, the rest of the buffer is all ignored.
 
-- **ACTIVE**
+**ACTIVE**
 Continue to grab everything from the buffer until ‘}@@’ which will switch the lexer back to INITIAL state.
 
 The part of the buffer that we grabbed in ACTIVE state can be evaluated directly without any special grammar for now, later this can be changed when we have the need for more complex stuff.
@@ -236,11 +236,12 @@ Deployment(s)
 Package(s)
      ↓
 Services(s)
+     ↓
 
 
 The reason Substrates sit above deployments is because all objects inherit properties of the substrate.
 
-*Parser*
+**Parser**
 
 The parser has 2 modes - the first is a lexer switch to consume everything in the buffer till a trigger (‘@@{’) is encountered and the second is a parser that will parse everything from ‘@@{‘ upto ‘}@@’ to generate our ast. Everything other than properties, built-in macros and dependencies is ignored, Epsilon’s macro parser will take care of that.
 
@@ -259,12 +260,12 @@ Dependencies in nuCalm only hold for system actions. They can be expressed in th
 
 **Dependency Types**
 
-- **Inherent dependencies**
+**Inherent dependencies**
 
 These are inherent to the model and no specification is necessary.
 For eg. Substrate has to be created before packages and services. Services have to be stopped before package is uninstalled etc. In terms of dependencies it translates into services depend on their packages which both depend on the underlying substrate. They are inherent to the system and used by system actions.
 
-- **Explicit dependencies**
+**Explicit dependencies**
 
 +They are expressed by depends_on list in the config section of different calm entities
 +Used only by system actions
@@ -279,7 +280,7 @@ When a system action is run in the context of a deployment, only the entities in
 
 When an action is run in the context of the service S2 alone, these dependencies don’t hold. We will not enforce any of the dependencies.
 
-- **Implicit dependencies calculated by the usage of macros in tasks**
+**Implicit dependencies calculated by the usage of macros in tasks**
 
 These dependencies are created within the context of a system action. Tasks can use variables and certain attributes from other entities. Mere usage of a variable in a task does not translate to a dependency. When a macro is used in a task and another task in the action sets the same, it translates in a dependency and an orchestration edge (the reverse of the dependency edge) in an action. A getter and setter on a variable have to be a part of the action.
 
@@ -313,17 +314,16 @@ When actions are generated, the use of setter and getter tasks translates into o
 
 - System actions will all be generated together at the compile step and will be marked as system generated and presented in the status section.
 
-- If action is edited by the user and it presents itself in the spec section, 
-  - we evaluate it for cycles and put it in the db and mark it as user edited
-  - We generate all the actions that are impacted by change and mark them also as user edited
-    - When create-action Is edited all other action edges are rebuilt based on this one and marked as user edited
-    - When an action x for an entity is edited all the action x for other entities are rebuilt and marked as user edited.
+- If action is edited by the user and it presents itself in the spec section 
+   - we evaluate it for cycles and put it in the db and mark it as user edited
+   - We generate all the actions that are impacted by change and mark them also as user edited
+      - When create-action Is edited all other action edges are rebuilt based on this one and marked as user edited
+      - When an action x for an entity is edited all the action x for other entities are rebuilt and marked as user edited.
 
-At this point, the action edges can be inconsistent with the other settings like dependency.
-Every time a spec change which can upset the edges happens, either depends_on list changes or script changes (more generally dependency list changes) we warn the user that the action edges created earlier will be thrown away and we will rebuild the edges and mark the actions as system generated again. At this point the user can choose to not proceed and withdraw the spec changes.
-
-But if the action spec changes are such that they don’t upset the dependency list,  (variable changes or direct edge changes) we accept the change and put the action in the db and keep the flag as user edited
-A system action cannot be deleted. 
+   - At this point, the action edges can be inconsistent with the other settings like dependency.
+- Every time a spec change which can upset the edges happens, either depends_on list changes or script changes (more generally dependency list changes) we warn the user that the action edges created earlier will be thrown away and we will rebuild the edges and mark the actions as system generated again. At this point the user can choose to not proceed and withdraw the spec changes.
+- But if the action spec changes are such that they don’t upset the dependency list,  (variable changes or direct edge changes) we accept the change and put the action in the db and keep the flag as user edited
+- A system action cannot be deleted. 
 
 We generate actions from different spec params which can change independently and the generated action itself can be edited independently. So we have to impose restrictions with this flexibility. Change in action edges directly replaces action to user edited. Changes in dependency list rebuilds the edges and marks the action as system generated. 
 
