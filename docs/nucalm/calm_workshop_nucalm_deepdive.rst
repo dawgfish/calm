@@ -8,6 +8,8 @@ app_blueprints
 AppBlueprint will be derived from Resource class and all API calls will be procedural in nature.
 Users will be able to create, edit and delete app_blueprints. The blueprints can be in various states while it is being created/edited. Its various states can be Draft,  Compiled,  Active, InActive,  Deleted,  Error. Once the blueprint is successfully compiled and verified it can be launched to create an App.
 
+|image0|
+
 **app_blueprints → app.spec Generation**
 
 When the blueprint is launched using POST /app_blueprints/{uuid}/launch, following things happen:
@@ -457,4 +459,6 @@ Services dependent on nucalm:
 - Aplos
 
 **nucalm-engine** and **epsilon** would register with service discovery when they are run. Similarly, the dependent services would be discovered using platform’s service discovery mechanism (The assumption now is that it would use zookeeper).
+
+.. |image0| image:: nucalm/media/image11.png
 
