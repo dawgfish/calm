@@ -2,13 +2,73 @@
 Calm Deep Dive
 ********************
 
+
+NuCalm Entities in Aplos
+************************
+
+NuCalm uses a mix of Resource Intentful and Procedural APIs. This is due to the fact that all lifecycle operations on applications may not be intentful. 
+
+**Note:** The challenges and use-cases of intetful API's are described in another document 
+
+The following top level entities will exist in Aplos:
+
+- /app_blueprints - Derives ResourceKind.
+- /apps - Derives ResourceIntentful.
+- /app_lca - Derives ResourceKind.
+- /app_runlogs -  Derives ResourceKind.
+
+**Introducing “Locks”**
+
+The IntentSpec entity will require additional attributes:
+
+- lock (is a flag - none-unlock or 1-lock)
+- locked_by (will be component name locking the entity)
+- locked_timestamp_secs
+- ttl (time after which Intent Gateway should take action on the spec).
+
+These attributes can be sent in the opaque_data field of the intent_spec by the caller using the create_or_update_intent_spec method. Any component that wishes to perform a transaction (nested or otherwise that requires a lock) on any entity kind will be able to take a lock on the entity in the IntentSpec. 
+
+The Intent Gateway will respond to any PUT or POST requests on the entity with an appropriate response stating that “Entity is Locked” (423 Locked (WebDAV; RFC 4918) The resource that is being accessed is locked). The component post completion of the transaction should update the final spec and unlock the said entity in the IntentSpec by clearing all the fields. Any GET requests will be handled by Aplos/Aplos Engine with the current spec and status accordingly.
+
+The component may not lock all the nested entities when the transaction is initiated. For e.g. the app spec when created in the intent_spec entity kind will be locked. The nested entity the VM will be locked as part of the create_action of the VM. The nested entities too shall have to be locked. Once the application create is successful the application entity and associated entities will be unlocked together along with the final spec.  Batch APIs can be used to complete the unlocking operation.
+
+In case of failure, the Component shall update the IntentSpec with the spec of the Entity as it exists at point of failure. **Entity**,  **Spec**, and **Status** in such cases may or may not match. User will trigger the necessary actions to ensure that the Application finally results in a steady state.
+
+|image0|
+
+NuCalm Components
+*****************
+- API Service - Styx
+- NuCalm Engine - Jove, Hercules & Iris
+- Execution Engine - Epsilon
+
+Engine Design
+*************
+Engine is comprised of 3 component: A Manager - **Jove**, set workers - **Hercules**, and a callback listener - **Iris**. There can be one manager and multiple workers per node. Across nodes, only one manager is active (or a leader) at a given point in time. All worker process in a PCVM connect to the local manager when they are brought up. The associated manager will maintain the “connected worker pool”. The styx/http endpoint will contact the elected manager for any run action processing. A request to engine can be of two types viz., run an action, abort an already running action. The engine will convert the action using contextual information available from application to workflows processable by orchestration engine and starts the run of corresponding workflows.
+
+|image1|
+
+Here are the processing steps of request:
+
+1. Styx finds out the current Jove leader.
+2. Request sent by Styx to leader Jove on a pre-defined port. 
+3. The received request will be processed by the HTTP endpoint of Jove. The manager will enqueue a packet of running an action with relevant data(as workstate proto) in ergon.
+4. The scheduler in manager will create a task in Ergon and sends the taskid to one of the connected Hercules(es). Hercules will mark the task as completed after it has dispatched work to the Epsilon (orchestration engine) with configured callbacks to Iris. Epsilon will send requests to Iris with current run information.
+5. Communication between Jove and Hercules will be via a bidirectional stream. The connection is initiated by Hercules, served by Jove. The message to process next item to worker is pushed by Jove & Hercules sends back ACKs.  If Hercules chooses to send a request to do something more, it has to send through the HTTP endpoint exposed out. The protocol of communication initially begins as HTTP and is upgraded to WebSockets. The binary messages sent over WebSockets are serialised protobuf messages.
+6. As Epsilon Engine picks up the workflow run request & processes it, it sends notifications to Iris & Iris in turn updates/creates the relevant entities in IDF.
+
+App Call Flows
+**************
+
+|image2|
+
+
+
 app_blueprints
 **************
 
 AppBlueprint will be derived from Resource class and all API calls will be procedural in nature.
 Users will be able to create, edit and delete app_blueprints. The blueprints can be in various states while it is being created/edited. Its various states can be Draft,  Compiled,  Active, InActive,  Deleted,  Error. Once the blueprint is successfully compiled and verified it can be launched to create an App.
-
-|image0|
 
 **app_blueprints → app.spec Generation**
 
@@ -461,4 +521,5 @@ Services dependent on nucalm:
 **nucalm-engine** and **epsilon** would register with service discovery when they are run. Similarly, the dependent services would be discovered using platform’s service discovery mechanism (The assumption now is that it would use zookeeper).
 
 .. |image0| image:: nucalm/media/image11.png
-
+.. |image1| image:: nucalm/media/image15.png
+.. |image2| image:: nucalm/media/image13.png
