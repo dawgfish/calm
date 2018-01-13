@@ -116,8 +116,6 @@ Similar to the previous implementation, prefix can be changed.
 +----------------------------------------------+--------------------------------------------------------+
 
 
-
-
 Implementation
 **************
 
@@ -128,13 +126,9 @@ The decision of whether to evaluate at run time or before running will be made b
 For example:
 
 - There are 2 services S1 and S2.
-
 - A script running on S1 requires ‘vm_ip’ property of S2.
-
 - The ‘vm_ip’ property of S2 is task outarg for some tasks (in this case, vm actions).
-
 - When a runbook is built, we will build a map of object name to outargs of tasks in the current runbook.
-
 - If ‘vm_ip’ is not present in any task/runbook outarg on S2 as part of the current runbook, then the macro is evaluated before the run, else it translates to a property access macro i.e. @@{AZ_LIST(Machine(“S2”)).get(Property(“vm_ip”))}@@
 
 **How it works?**
@@ -157,6 +151,7 @@ Calm to Epsilon object mapping
 Every calm object maps to a corresponding object in Epsilon.
 
 **Epsilon entities**
+
 - The Calm Application itself 
 - Each Deployment (Group) 
 - Each Substrate (Group) 
@@ -164,9 +159,11 @@ Every calm object maps to a corresponding object in Epsilon.
 - Each Service (Group) 
 
 **Epsilon machines**
+
 - One machine shared between Deployment Element, Substrate Element, Package Elements & Service Elements i.e. one machine per replica.
 
 **Properties on Epsilon objects**
+
 Entity properties in epsilon are a consolidated list of values for each property on individual elements. Since the machine is shared between multiple elements, namespacing is used to maintain uniqueness of property names. 
 
 Namespace for a Calm object is: ‘<Calm_Object_Type>_<Calm_Object_Name>_’, for a deployment d1, properties on the epsilon machine would look like this: ‘Deployment_d1_<prop_name>’.
@@ -223,9 +220,7 @@ To take care of property inheritance, namespacing, and dependencies we need to t
 When building the workflow for any action (action.build_wf()), macro translation involves the following:
 
 - Building macro_context for the current application and the current action
-
 - Macro parsing on a per task basis which happens during task serialization
-
 - AST generation and evaluation
 
 **Macro context**
@@ -319,10 +314,10 @@ When actions are generated, the use of setter and getter tasks translates into o
 - System actions will all be generated together at the compile step and will be marked as system generated and presented in the status section.
 
 - If action is edited by the user and it presents itself in the spec section, 
-+ we evaluate it for cycles and put it in the db and mark it as user edited
-+ We generate all the actions that are impacted by change and mark them also as user edited
-++ When create-action Is edited all other action edges are rebuilt based on this one and marked as user edited
-++ When an action x for an entity is edited all the action x for other entities are rebuilt and marked as user edited.
+  - we evaluate it for cycles and put it in the db and mark it as user edited
+  - We generate all the actions that are impacted by change and mark them also as user edited
+    - When create-action Is edited all other action edges are rebuilt based on this one and marked as user edited
+    - When an action x for an entity is edited all the action x for other entities are rebuilt and marked as user edited.
 
 At this point, the action edges can be inconsistent with the other settings like dependency.
 Every time a spec change which can upset the edges happens, either depends_on list changes or script changes (more generally dependency list changes) we warn the user that the action edges created earlier will be thrown away and we will rebuild the edges and mark the actions as system generated again. At this point the user can choose to not proceed and withdraw the spec changes.
@@ -362,7 +357,7 @@ Any “<secret string>” type in spec should follow the below structure:
       },
    }
    
-Later, if /secrets (or equivalent) is exposed as a top-level entity in Aplos, uuid in secret_reference can be used to update the secrets independently.
+Later, if /secrets (or equivalent) are exposed as a top-level entity in Aplos, **uuid** in secret_reference can be used to update the secrets independently.
 
 **Secret Variable**
 Secret variables are supported in nuCalm. Any secret variable should follow the below structure:
@@ -443,9 +438,10 @@ These packages would be stored in a private yum repository.
 
 Docker images would be built using DockerFiles which would pull the respective rpm packages built in the previous step. These images would derive from a base container image provided by nutanix infrastructure. These images would be pushed to a private docker registry for consumption.
 
-*Dependencies* 
+Dependencies
 
 Services required by nucalm:
+
 - IDF
 - Uhura
 - Zookeeper
@@ -455,6 +451,7 @@ Services required by nucalm:
 - ElasticStask
 
 Services dependent on nucalm:
+
 - Aplos
 
 **nucalm-engine** and **epsilon** would register with service discovery when they are run. Similarly, the dependent services would be discovered using platform’s service discovery mechanism (The assumption now is that it would use zookeeper).
