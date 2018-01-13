@@ -260,37 +260,37 @@ Dependencies in nuCalm only hold for system actions. They can be expressed in th
 
 **Dependency Types**
 
-**Inherent dependencies**
+- Inherent dependencies
 
-These are inherent to the model and no specification is necessary.
-For eg. Substrate has to be created before packages and services. Services have to be stopped before package is uninstalled etc. In terms of dependencies it translates into services depend on their packages which both depend on the underlying substrate. They are inherent to the system and used by system actions.
+   These are inherent to the model and no specification is necessary.
+   For eg. Substrate has to be created before packages and services. Services have to be stopped before package    is uninstalled etc. In terms of dependencies it translates into services depend on their packages which both    depend on the underlying substrate. They are inherent to the system and used by system actions.
 
-**Explicit dependencies**
+- Explicit dependencies
 
-+They are expressed by depends_on list in the config section of different calm entities
-+Used only by system actions
+   - They are expressed by depends_on list in the config section of different calm entities.
+   - Used only by system actions
 
-For eg. Theoretically depends_on list of S2 can be as follows [S1, SUB10, DEP4] where S1 and S2 are part of same deployment, SUB10 is a part of another deployment and DEP4 is yet another deployment. But in usage the depends_on list on a service will have only other services because it is the logical unit we want to expose.
+   For eg. Theoretically **depends_on** list of **S2** can be as follows **[S1, SUB10, DEP4]** where **S1** and **S2** are part of same deployment, **SUB10** is a part of another deployment and **DEP4** is yet another deployment. But in usage the **depends_on** list on a service will have only other services because it is the logical unit we want to expose.
+   
+   In the application context S2 can be created/started only after service S1, substrate SUB10 and DEP4 are created/started and should be deleted/stopped after the other three entities are deleted/stopped. 
 
-In the application context S2 can be created/started only after service S1, substrate SUB10 and DEP4 are created/started and should be deleted/stopped after the other three entities are deleted/stopped. 
+   In terms of system actions on application it means that create RB of S1, SUB10 and DEP4 will be run before the create RB of S2. A dependency edge from S2 to S1 translates into an orchestration edge from create/start CallRunbookTask of S1 to CallRunbookTask of S2
 
-In terms of system actions on application it means that create RB of S1, SUB10 and DEP4 will be run before the create RB of S2. A dependency edge from S2 to S1 translates into an orchestration edge from create/start CallRunbookTask of S1 to CallRunbookTask of S2
+   When a system action is run in the context of a deployment, only the entities in the depends_on list which are a part of this deployment are used.
 
-When a system action is run in the context of a deployment, only the entities in the depends_on list which are a part of this deployment are used.
+   When an action is run in the context of the service S2 alone, these dependencies don’t hold. We will not enforce any of the dependencies.
 
-When an action is run in the context of the service S2 alone, these dependencies don’t hold. We will not enforce any of the dependencies.
+- Implicit dependencies calculated by the usage of macros in tasks
 
-**Implicit dependencies calculated by the usage of macros in tasks**
+   These dependencies are created within the context of a system action. Tasks can use variables and certain attributes from other entities. Mere usage of a variable in a task does not translate to a dependency. When a macro is used in a task and another task in the action sets the same, it translates in a dependency and an orchestration edge (the reverse of the dependency edge) in an action. A getter and setter on a variable have to be a part of the action.
 
-These dependencies are created within the context of a system action. Tasks can use variables and certain attributes from other entities. Mere usage of a variable in a task does not translate to a dependency. When a macro is used in a task and another task in the action sets the same, it translates in a dependency and an orchestration edge (the reverse of the dependency edge) in an action. A getter and setter on a variable have to be a part of the action.
+   These dependencies are also possible only in system actions. The dependency from a task to another when they are not in the same callrunbooktask, translates into an orchestration edge of the callrunbook tasks they are a part of. Edges between tasks across calmrunbooktasks are not possible in system actions. 
 
-These dependencies are also possible only in system actions. The dependency from a task to another when they are not in the same callrunbooktask, translates into an orchestration edge of the callrunbook tasks they are a part of. Edges between tasks across calmrunbooktasks are not possible in system actions. 
+   So when a dependency is created between tasks T1 (getter) and T2 (setter) which are are part of same callrunbooktask, the orchestration edge is created between T1 and T2 (T2 → T1)
 
-So when a dependency is created between tasks T1 (getter) and T2 (setter) which are are part of same callrunbooktask, the orchestration edge is created between T1 and T2 (T2 → T1)
+   When a dependency is created between two tasks **T1** and **T2** which are part of different callrunbooktasks **CT1** and **CT2**, we have to traverse up the chain till we get the first callrunbooktask and create an orchestration edge **CT2 → CT1**
 
-When a dependency is created between two tasks T1 and T2 which are part of different callrunbooktasks CT1 and CT2, we have to traverse up the chain till we get the first callrunbooktask and create an orchestration edge CT2 → CT1
-
-The implicit dependencies between callrunbooktasks of a create action will be promoted to the depends_on list so these can be used by other system actions. 
+   The implicit dependencies between callrunbooktasks of a create action will be promoted to the depends_on list so these can be used by other system actions. 
 
 **Dependencies as presented to the user (status sections)**
 
@@ -316,10 +316,9 @@ When actions are generated, the use of setter and getter tasks translates into o
 
 - If action is edited by the user and it presents itself in the spec section 
    - we evaluate it for cycles and put it in the db and mark it as user edited
-   - We generate all the actions that are impacted by change and mark them also as user edited
+   - We generate all the actions that are impacted by change and mark them also as user edited.
       - When create-action Is edited all other action edges are rebuilt based on this one and marked as user edited
       - When an action x for an entity is edited all the action x for other entities are rebuilt and marked as user edited.
-
    - At this point, the action edges can be inconsistent with the other settings like dependency.
 - Every time a spec change which can upset the edges happens, either depends_on list changes or script changes (more generally dependency list changes) we warn the user that the action edges created earlier will be thrown away and we will rebuild the edges and mark the actions as system generated again. At this point the user can choose to not proceed and withdraw the spec changes.
 - But if the action spec changes are such that they don’t upset the dependency list,  (variable changes or direct edge changes) we accept the change and put the action in the db and keep the flag as user edited
