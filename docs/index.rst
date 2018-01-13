@@ -14,7 +14,8 @@ Welcome to Calm Workshop's documentation!
    alm
    devops
    orchestration
-   nucalm
+   nucalm_overview
+   nucalm_deepdive
    quiz
 
    lab1
