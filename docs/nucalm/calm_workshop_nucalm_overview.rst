@@ -18,6 +18,17 @@ Prism Central VM sized depending on requirements
 
 NuCalm is deployed alongside SSP in the Prism Central VM. NuCalm consumes multiple Nutanix internal services and is not a standalone component. By extension, users must have a Nutanix Prism Central VM to enable NuCalm functionality.
 
+**Use Cases**
+
+- Automation for complex applications
+   - Not only provisioning, but also self service.
+- Enable application self service for multiple teams
+   - Setup Complex applications with a single click.
+   - Quickly get dev/test environments ready to go.
+- Single view to provision and manage hybrid clouds
+   - Private hypervisors and public cloud together.
+
+
 WHAT: NuCalm Components
 ***********************
 
@@ -286,8 +297,11 @@ Policies are requirements for other different components for a blueprint. Polici
 
 **AppStore**
 
-An AppStore is essentially a classical economics Marketplace. Marketplace is the exchange channel between blueprint publishers and consumers. Publishers upload or publish their blueprints to the Marketplace to make it available for Consumers. Consumers search/browse the Marketplace to find desired Blueprints and then (depending on other considerations) download and use them
+An AppStore is essentially a classical economics Marketplace. Marketplace is the exchange channel between blueprint publishers and consumers. Publishers upload or publish their blueprints to the Marketplace to make it available for Consumers. Consumers search/browse the Marketplace to find desired Blueprints and then (depending on other considerations) download and use them.
 
+- AppStore/Marketplace is ONLY for deployment automation and ease of use.
+- BYOL: Customers need to input their own existing licenses into the apps.
+- NTNX is NOT taking software business from channel.
 
 Key Actors / Dramatis Persona
 *****************************
