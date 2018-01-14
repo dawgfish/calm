@@ -11,6 +11,11 @@ NuCalm allows Nutanix Enterprise customers to seamlessly select, provision, depl
 
 To enable adoption and encourage enterprises to use the NTNX platform, NuCalm will not restrict itself to Nutanix (AHV/Xi), but support multiple platforms used by customers so that customers get used to a single self-service and automation interface via which they can interact with all their infrastructure and use it as a bridge to move more and more into the Nutanix ecosystem and future offerings.
 
+Prism Central VM sized depending on requirements
+
+- Small: 12Gb + 4Gb for Calm.
+- Large: 32Gb + 8Gb for Calm.
+
 NuCalm is deployed alongside SSP in the Prism Central VM. NuCalm consumes multiple Nutanix internal services and is not a standalone component. By extension, users must have a Nutanix Prism Central VM to enable NuCalm functionality.
 
 WHAT: NuCalm Components
@@ -176,6 +181,27 @@ infrastructure costs real dollars to run per unit-of-time. Some infrastructure c
 vs others have hard limits. A good analogy is energy consumption from Electricity companies vs having on-prem Diesel 
 Generators. Examples are AWS, vCenter, Azure.
 
+**Service**
+
+A component of the application e.g. a VM.
+
+**Action**
+
+Application or service-level workflow.
+
+- “Create” action will deploy the application.
+- “Delete” action will … ?  Yes, reverse the “Create” action and delete VMs.
+
+**Projects**
+
+Used for access control and RBAC.
+
+**Settings**
+
+- Cloud connectors.
+- Enable/disable Marketplace.
+
+
 **Blueprints**
 
 Blueprints are App Recipes. These recipes encompass App Architecture, Infrastructure choices, Provisioning & Deployment steps, App Bits, Command steps, Monitoring endpoints, Remediation steps, Licensing & Monetization, Policies. Every time a  Blueprint is executed it gives rise to an App.
@@ -184,17 +210,25 @@ Blueprints are App Recipes. These recipes encompass App Architecture, Infrastruc
 
 **App**
 
-App is a deployed Blueprint. Every time a Blueprint runs it creates a new App instance. Apps have their own life cycle.
+App is a deployed Blueprint. Every time a Blueprint runs it creates a new App instance. Apps have their own life cycle. 
+
+Also could be considered as a collection of 1 or more VMs managed by Calm.
+
+E.g. a typical dynamic website.
+
+- Web Server (NGINX/Apache/IIS).
+- Database server (MariaDB/MySQL/MSSQL).
+
 
 An App has the following life cycle steps:
 
 1. Instantiation: A blueprint is instantiated to setup the application. Instantiation is 
 
-i. Provision the Infrastructure components (compute, storage, network)
+   i. Provision the Infrastructure components (compute, storage, network)
 
-ii.	Fetch the App Bits
-iii.	Deploy & Configure the App Bits on infrastructure components
-iv.	Run the Sanity Checks
+   ii.	Fetch the App Bits
+   iii.	Deploy & Configure the App Bits on infrastructure components
+   iv.	Run the Sanity Checks
 
 2. Running: After instantiation, the App is up and running. In running stage the application needs periodic Command steps to keep it healthy and operational. These include upgrades, scale-up, scale-down, start, stop, backup (i.e. common App specific actions defined in the blueprint).
 
@@ -202,6 +236,8 @@ iv.	Run the Sanity Checks
 
 
 **Blueprint Components**
+
+The visual design & content of your application.  Where all application specs are laid out.
 
 Important components:
 
