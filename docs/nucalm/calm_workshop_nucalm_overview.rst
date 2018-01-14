@@ -1,6 +1,6 @@
-****
-Calm 
-****
+*************
+Calm Overview
+*************
 
 Overview
 ********
@@ -131,11 +131,13 @@ Licensing for NuCalm:
 WHY: NuCalm Reasoning
 *********************
 
-**Competition**
+The business care about Apps, not VMs.  Managing Apps is challenging. Apps are complicated…. Application health is critical to meeting business demands and SLA's.  As apps become more and more comlpex, tools need to evovle to mange the copmlexity of deployment, monitoring, and scaling across varying enviornments.
 
-NuCalm is an opinionated and UX-first automation layer that enables NTNX customers to manage their federated infrastructure. 
+|image7|
 
-NTNX competition in the automation and orchestration plane is NOT VMware vRA. As we launch Xi and bring NuCalm to Prism on-prem and the Xi control plane, the competition will be AWS foremost, with the possibility of smaller startups out-innovating NTNX as a company. This is why NuCalm is not be benchmarked to vRA features, though NTNX will prioritize features as per customer requirements for the Entery.
+Hybrid Clouds add another layer of challenges.  Environments and plattforms are evolving faster than applications, where each platform or environment requires subject matter experts to manage them.  NuCalm incorporates instrumentation needed to manage this complexity from a single control-point. 
+
+|image8|
 
 **Application-Focus**
 
@@ -178,6 +180,12 @@ Budgets are an important component of self-service, since admins need to track u
 **Policy Engine**
 
 The policy engine was born from the realization that business rules and infrastructure rules should not be mixed. Traditional automation bakes in business rules into each automation process and script. However, this means that any single change in business rules requires changes to multiple scripts that reference that particular process. For this reason, the policy engine is a separate layer that constrains what actions can be performed on infrastructure, enabling IT to maintain oversight while still enabling self-service and automation.
+
+**Competition**
+
+NuCalm is an opinionated and UX-first automation layer that enables NTNX customers to manage their federated infrastructure. 
+
+NTNX competition in the automation and orchestration plane is NOT VMware vRA. As we launch Xi and bring NuCalm to Prism on-prem and the Xi control plane, the competition will be AWS foremost, with the possibility of smaller startups out-innovating NTNX as a company. This is why NuCalm is not be benchmarked to vRA features, though NTNX will prioritize features as per customer requirements for the Entery.
 
 
 Key Terms
@@ -395,7 +403,6 @@ Publishers have various overlapping incentives to build Blueprints.
 
 |image1|
 
-
 **Publisher Friction**
 
 We need to make publishing as frictionless as possible. This will need:
@@ -415,8 +422,6 @@ Consumer Workflow:
 |image2|
 
 
-
-
 .. |image0| image:: nucalm/media/image1.png
 .. |image1| image:: nucalm/media/image2.png
 .. |image2| image:: nucalm/media/image3.png
@@ -424,5 +429,7 @@ Consumer Workflow:
 .. |image4| image:: nucalm/media/image8.png
 .. |image5| image:: nucalm/media/image9.png
 .. |image6| image:: nucalm/media/image16.png
+.. |image7| image:: nucalm/media/image18.png
+.. |image8| image:: nucalm/media/image19.png
 
 
