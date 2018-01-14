@@ -7,7 +7,7 @@ Overview
 
 NuCalm allows Nutanix Enterprise customers to seamlessly select, provision, deploy & manage their Business Apps across all their infrastructure, both private and public cloud. NuCalm ties together an AppStore, App Lifecycle, Monitoring & Remediation by providing single control-point for managing heterogeneous infrastructure, be it VMs or containers, or even baremetal servers. NuCalm will eventually support all the components required to manage a complete Software Defined Data Center. 
 
-|image3|
+|image6|
 
 To enable adoption and encourage enterprises to use the NTNX platform, NuCalm will not restrict itself to Nutanix (AHV/Xi), but support multiple platforms used by customers so that customers get used to a single self-service and automation interface via which they can interact with all their infrastructure and use it as a bridge to move more and more into the Nutanix ecosystem and future offerings.
 
@@ -21,7 +21,7 @@ NuCalm is deployed alongside SSP in the Prism Central VM. NuCalm consumes multip
 WHAT: NuCalm Components
 ***********************
 
-|image6|
+|image3|
 
 **Application-focus**
 
