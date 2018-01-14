@@ -21,6 +21,8 @@ NuCalm is deployed alongside SSP in the Prism Central VM. NuCalm consumes multip
 WHAT: NuCalm Components
 ***********************
 
+|image6|
+
 **Application-focus**
 
 NuCalm is an application-centric view of IT infrastructure, as compared to the existing VM-centric views for most IT management planes. As IT evolves to microservices with a focus on self-service and the business user, the business increasingly consumes applications, not the VMs or containers underlying the application. The basic unit of creation within NuCalm is the application, with a single VM being a simpler application with n=1. Applications containing multiple VMs or containers are provisioned, managed and deleted as a set instead of independent units. 
@@ -407,5 +409,6 @@ Consumer Workflow:
 .. |image3| image:: nucalm/media/image10.png
 .. |image4| image:: nucalm/media/image8.png
 .. |image5| image:: nucalm/media/image9.png
+.. |image6| image:: nucalm/media/image16.png
 
 
