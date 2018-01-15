@@ -16,6 +16,7 @@ Welcome to Calm Workshop's documentation!
    orchestration
    nucalm_overview
    nucalm_deepdive
+   nucalm_positioning
    quiz
 
    lab1
