@@ -48,7 +48,7 @@ Puppet is a solution that lets you control whats installed/configured on multipl
 
 In a puppetised environment, each agent checks-in with the puppet-master to see if it is set up the way it’s supposed to. If the answer is yes then nothing happens, if not, then the puppet master tells the agent what it should look like, then the node makes changes to itself accordingly to reflect this.
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/orchestration/image1.png
 
 The way this works is that on the puppet master you can define a “Desired State” for each of your nodes.   This desired state is declared in a syntax similar to a hash table’s syntax.
 
@@ -65,7 +65,7 @@ Chef Overview
 
 Chef is a configuration management tool for dealing with machine setup on physical servers, virtual machines and in the cloud. Many companies use Chef software to control and manage their infrastructure including Facebook, Etsy, Cheezburger, and Indiegogo.
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/orchestration/image3.png
 
 Chef helps solve this problem by treating infrastructure as code. Rather than manually changing anything, the machine setup is described in a Chef recipe.
 
@@ -172,7 +172,7 @@ Ansible can be thought of as general purpose tool for managing servers. This mea
 
 Ansible has a controller-client type architecture, where you have one server (aka the controller) controlling lots of other servers (aka clients). However in ansible, you don’t need to install any ansible specific software on the client’s themselves. You only install ansible on the controller. I.e. it is an agentless architecture.  The controller communicates with all the clients via standard ssh.
 
-|image1|
+.. figure:: http://s3.nutanixworkshops.com/calm/orchestration/image2.png
 
 Ansible playbooks are essentially 1 or more scripts written in yaml. The puppet equivalent to playbooks is puppet manifests.
 
