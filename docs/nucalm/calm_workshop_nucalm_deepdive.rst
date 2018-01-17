@@ -34,7 +34,7 @@ The component may not lock all the nested entities when the transaction is initi
 
 In case of failure, the Component shall update the IntentSpec with the spec of the Entity as it exists at point of failure. **Entity**,  **Spec**, and **Status** in such cases may or may not match. User will trigger the necessary actions to ensure that the Application finally results in a steady state.
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image11.png
 
 NuCalm Components
 *****************
@@ -46,7 +46,7 @@ Engine Design
 *************
 Engine is comprised of 3 component: A Manager - **Jove**, set workers - **Hercules**, and a callback listener - **Iris**. There can be one manager and multiple workers per node. Across nodes, only one manager is active (or a leader) at a given point in time. All worker process in a PCVM connect to the local manager when they are brought up. The associated manager will maintain the “connected worker pool”. The styx/http endpoint will contact the elected manager for any run action processing. A request to engine can be of two types viz., run an action, abort an already running action. The engine will convert the action using contextual information available from application to workflows processable by orchestration engine and starts the run of corresponding workflows.
 
-|image1|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image15.png
 
 Here are the processing steps of request:
 
@@ -60,7 +60,7 @@ Here are the processing steps of request:
 App Call Flows
 **************
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image13.png
 
 
 
