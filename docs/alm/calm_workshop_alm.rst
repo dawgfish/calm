@@ -8,7 +8,7 @@ Introduction
 Application lifecycle management (ALM) is the supervision of a software application from its initial planning through
 retirement. It also refers to how changes to an application are documented and tracked.
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/alm/image1.png
 
 Application Portfolio Management
 ********************************
@@ -19,7 +19,7 @@ Application portfolio management is a critical part of IT governance. It enables
 
 Application Portfolio Management is an approach to managing IT software applications and software-based services across the enterprise. Mapping the universe of software applications against a common set of strategic drivers of investment allows you to make critical decisions about which applications to maintain, invest, retire or consolidate. Our approach to APM is centered on cost, performance and strategic alignment with business needs.
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/alm/image2.png
 
 An APM system uses a scoring algorithm for generating reports about the value of each application and the health of the IT infrastructure as a whole. By gathering metrics like an application's age, how often it's used, the cost it takes to maintain it and its interrelationships with other applications, a manager can use more than just an educated guess to decide whether or not a particular application should be kept, updated, retired or replaced. 
 
@@ -29,7 +29,7 @@ Application Lifecycle Management
 
 ALM is a very broad term that reflects a change in attitude towards software development that is also expressed in the term DevOps. DevOps blends the tasks performed by a company's application development and systems operations teams. In the past, a development team might work independently using a waterfall development model and hand off the completed software application to an operations team for deployment and maintenance. Today, it is more likely that developers will use an agile model and remain involved with the application after deployment, working with business owners and operations to make incremental changes as needed.  
 
-|image1|
+.. figure:: http://s3.nutanixworkshops.com/calm/alm/image3.png
 
 There are many ALM tools available for tracking application changes. These range from dedicated ALM products that monitor an application from inception to completion, automatically sorting files into logical buckets as changes are noted, to simple wikis that require team members to record changes manually.
 
@@ -45,7 +45,7 @@ Application Release Management
 
 Release management is a relatively new but rapidly growing discipline within software engineering. As software systems, software development processes, and resources become more distributed, they invariably become more specialized and complex. Furthermore, software products (especially web applications) are typically in an ongoing cycle of development, testing, and release, often running on evolving platforms with growing complexity. Such systems require dedicated resources to oversee the integration and flow of development, testing, deployment, and support.
 
-|image8|
+.. figure:: http://s3.nutanixworkshops.com/calm/alm/image8.png
 
 In organizations that manage IT operations using the IT Service Management paradigm, specifically the ITIL framework, release management will be guided by ITIL concepts and principles. There are several formal ITIL Processes that are related to release management, primarily the Release and Deployment Management process, which "aims to plan, schedule and control the movement of releases to test and live environments.", and the Change Management process In ITIL organizations, releases tend to be less frequent than in an agile development environment. Release processes are managed by IT operations teams using IT Service Management ticketing systems, with less focus on automation of release processes.
 
@@ -99,7 +99,7 @@ Application Performance Management
 
 Application Performance Mamnagement, is largely an industry or vendor created term for anything that has to do with managing or monitoring the performance of your code, application dependencies, transaction times, and overall user experience.
 
-|image7|
+.. figure:: http://s3.nutanixworkshops.com/calm/alm/image7.png
 
 Since Application Performance Management is sort of a ubiquitous term for anything and everything performance related, some vendors use the term to mean totally different things, and can span several different types of vendor solutions.
 
@@ -114,4 +114,6 @@ Since Application Performance Management is sort of a ubiquitous term for anythi
 .. |image2| image:: alm/media/image2.png
 .. |image8| image:: alm/media/image8.png
 .. |image7| image:: alm/media/image7.png
+
+
 
