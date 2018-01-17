@@ -12,7 +12,7 @@ Our competition sells yesterday’s technologies and solutions, so we must chang
 Does the business care about infrastructure details or how many years the sales rep has taken management to golf?
 Sometimes yes, but increasingly in a competitive world: no.
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image20.png
 
 Instead the business cares about outcomes like: Scale, Agility, and Cost -- so we must frame our discussion in these terms to shut out our competition and change the way our customers conduct their business.
 We must begin to leave HCI behind as it is commoditized and realize it was merely a stepping stone which places in front of customers today, but we cannot be box pushers anymore.
@@ -55,7 +55,7 @@ Most of the new audience does not care about HCI and increasingly, they control 
 Read the customer’s temperature, then change the conversation. Almost all in IT are afraid for losing their jobs to the public cloud and SaaS vendors
 Ask why the app team is not in the room. Ask if AWS is.
 
-|image1|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image21.png
 
 - Does the business care about:
    - infrastructure stacks
@@ -81,7 +81,7 @@ Change the discussion from HCI to Enterprise Cloud OS.  Public or Private Cloud:
 
 Why not Public Cloud for all Workloads? 
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image22.png
 
 - App workloads can model power utilities: a mix of baseline demand + burst capacity.
 - Public clouds are great for applications and workloads that have unpredictable or variable demands. For example, if a business launches a new online/mobile app (e.g., new online shopping experience, checking scanning app from a bank), the demand for the app or service is not well understood initially. In this case, public cloud allows businesses to ramp up resources for the app depending on demand. However, as the demand for the app becomes more stable/predictable, it is more economical to deploy on prem. Another example is applications such as month-end payroll systems or online shopping portals that have highly variable/seasonal demands with peak demands that are several times the average. This is why when NASA kicked off the Mars Exploration Rover mission, the event telecast was done on the cloud because the demand was unpredictable and highly elastic (a one time event)
@@ -92,7 +92,7 @@ Why not Public Cloud for all Workloads?
 
 Identify where your prospects are on their journey.  Most customers are trapped in the lower-left quadrant by their vendors.
 
-|image3|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image23.png
 
 
 Agility (horizontal, X-axis):
@@ -113,7 +113,7 @@ Most are trapped in the lower-left quadrant by:
        Hands on ops, single DC/cloud,
        without automation
 
-|image4|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image24.png
 
 
 Prosposect for Calm Opportunities:
@@ -151,11 +151,11 @@ Competitive:
 
 Calm vs. Change + Configuratuon Management
 
-|image5|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image25.png
 
 Product comparison:
 
-|image6|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image26.png
 
 
 Mission:
@@ -163,7 +163,7 @@ Mission:
 
 Prospect and Demo on your own!
 
-|image7|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image27.png
 
 
 Resources:
