@@ -8,7 +8,7 @@ SDLC Introduction
 
 Understanding the fundamentals of SDLC.  A **software development life cycle** is composed of a number of clearly defined and distinct work phases which are used by systems engineers and systems developers to plan for, design, build, test, and deliver information systems.
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/sdlc/image1.png
 
 Successful projects are managed well. In order to manage a project efficiently, the manager or dev team must choose which software development method works best for the project at hand.  All of the numerous software development methodologies that exist are used for different reasons. I've been doing some research to understand why different methodologies exist, and which ones are the most commonly used software development methodologies.
 
@@ -25,7 +25,7 @@ Stages and Best Practices of SDLC
 
 By Following the best practices and/or stages of SDLC ensures the process works in a smooth, efficient, and productive way.
 
-|image1|
+.. figure:: http://s3.nutanixworkshops.com/calm/sdlc/image8.png
 
 **Identify the current problems. “What don’t we want?”:**
 
@@ -87,7 +87,7 @@ Waterfall Development Model
 
 Considered the traditional software development method, the waterfall method is a rigid linear model that consists of sequential phases (Requirements, Design, Implementation, Verification, Maintenance) in which distinct goals are accomplished. Each phase must be 100% complete before moving onto the next phase, and traditionally there is no process for going back to modify the project or direction.
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/sdlc/image2.png
 
 The linear nature of this method makes it easy to understand and manage. Projects with clear objectives and stable requirements can best use the waterfall method. Less experienced project managers, project teams, and teams whose composition changes frequently may benefit the most from using the waterfall development methodology. However, it is often slow and costly due to the rigid structure and tight controls. These drawbacks led waterfall method users to the explore other development methodologies.
 
@@ -124,7 +124,7 @@ Spiral Development Model
 
 The spiral model combines the idea of iterative development with the systematic, controlled aspects of the waterfall model. This Spiral model is a combination of iterative development process model and sequential linear development model i.e. the waterfall model with a very high emphasis on risk analysis. It allows incremental releases of the product or incremental refinement through each iteration around the spiral.
 
-|image3|
+.. figure:: http://s3.nutanixworkshops.com/calm/sdlc/image3.png
 
 The spiral model has four phases. A software project repeatedly passes through these phases in iterations called Spirals.
 
@@ -193,7 +193,7 @@ Iterative process starts with a simple implementation of a subset of the softwar
 
 The following illustration is a representation of the Iterative and Incremental model
 
-|image4|
+.. figure:: http://s3.nutanixworkshops.com/calm/sdlc/image4.png
 
 Iterative and Incremental development is a combination of both iterative design or iterative method and incremental build model for development. "During software development, more than one iteration of the software development cycle may be in progress at the same time." This process may be described as an "evolutionary acquisition" or "incremental build" approach."
 
@@ -243,7 +243,7 @@ Agile Development Model
 
 The Agile software development life cycle is based upon the iterative and incremental process models, and focuses upon adaptability to changing product requirements and enhancing customer satisfaction through rapid delivery of working product features and client participation. Agile methods primarily focus upon breaking up the entire product into smaller, easily developable, “shippable” product features developed through “incremental” cycles known as “sprints”.
 
-|image5|
+.. figure:: http://s3.nutanixworkshops.com/calm/sdlc/image9.png
 
 Each Agile sprint traditionally lasts from two weeks up to one month. Agile trends now indicate they typically last from seven days up to ten “working” days. Cross-functional teams work simultaneously while developing the product features in daily sprints. The team members are generally experienced and possess varied levels of expertise in activities such as designing, coding, testing, and quality acceptance. At the end of each sprint, a working product feature(s) is developed and presented to the product owner for verification purposes. Once the PO Okays the development, it is presented to the stakeholders, and their opinions are carefully noted to improve upon the current product development cycle. The entire process is repeated through sprints until all the constituent product features are developed.
 
@@ -251,7 +251,7 @@ Each Agile sprint traditionally lasts from two weeks up to one month. Agile tren
 
 An Agile software life cycle is much different as compared to traditional software development frameworks like Waterfall. In Agile, more emphasis is given to sustained and quick development of product features rather than spending more time during the initial project planning, and analysing the actual requirements. The Agile team develops the product through a series of iterative cycles known as sprints. Besides development activity, other aspects pertaining to development such as product analysis, designing the product features, developing the functionality, and “testing” the development for bugs are also carried out during the sprints. The incremental cycles should always produce a “shippable” product release that can be readily deployed.
 
-|image6|
+.. figure:: http://s3.nutanixworkshops.com/calm/sdlc/image6.png
 
 Agile Methods break the product into small incremental builds. These builds are provided in iterations or sprints. Each iteration/sprint typically lasts from about one to three weeks. Every iteration involves cross functional teams working simultaneously in various areas like:
 
@@ -480,7 +480,7 @@ The following sequence of steps is generally followed:
 - Refactor code
 - Repeat
 
-|image7|
+.. figure:: http://s3.nutanixworkshops.com/calm/sdlc/image7.png
 
 The first step is to quickly add a test, basically just enough code to fail.  Next you run your tests, often the complete test suite although for sake of speed you may decide to run only a subset, to ensure that the new test does in fact fail. You then update your functional code to make it pass the new tests. The fourth step is to run your tests again. If they fail you need to update your functional code and retest. Once the tests pass the next step is to start over (you may first need to refactor any duplication out of your design as needed, turning TFD into TDD).
 
