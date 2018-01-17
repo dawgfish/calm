@@ -7,7 +7,7 @@ Overview
 
 NuCalm allows Nutanix Enterprise customers to seamlessly select, provision, deploy & manage their Business Apps across all their infrastructure, both private and public cloud. NuCalm ties together an AppStore, App Lifecycle, Monitoring & Remediation by providing single control-point for managing heterogeneous infrastructure, be it VMs or containers, or even baremetal servers. NuCalm will eventually support all the components required to manage a complete Software Defined Data Center. 
 
-|image6|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image16.png
 
 To enable adoption and encourage enterprises to use the NTNX platform, NuCalm will not restrict itself to Nutanix (AHV/Xi), but support multiple platforms used by customers so that customers get used to a single self-service and automation interface via which they can interact with all their infrastructure and use it as a bridge to move more and more into the Nutanix ecosystem and future offerings.
 
@@ -32,7 +32,7 @@ NuCalm is deployed alongside SSP in the Prism Central VM. NuCalm consumes multip
 WHAT: NuCalm Components
 ***********************
 
-|image3|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image10.png
 
 **Application-focus**
 
@@ -133,11 +133,11 @@ WHY: NuCalm Reasoning
 
 The business care about Apps, not VMs.  Managing Apps is challenging. Apps are complicated…. Application health is critical to meeting business demands and SLA's.  As apps become more and more comlpex, tools need to evovle to mange the copmlexity of deployment, monitoring, and scaling across varying enviornments.
 
-|image7|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image18.png
 
 Hybrid Clouds add another layer of challenges.  Environments and plattforms are evolving faster than applications, where each platform or environment requires subject matter experts to manage them.  NuCalm incorporates instrumentation needed to manage this complexity from a single control-point. 
 
-|image8|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image19.png
 
 **Application-Focus**
 
@@ -227,7 +227,7 @@ Used for access control and RBAC.
 
 Blueprints are App Recipes. These recipes encompass App Architecture, Infrastructure choices, Provisioning & Deployment steps, App Bits, Command steps, Monitoring endpoints, Remediation steps, Licensing & Monetization, Policies. Every time a  Blueprint is executed it gives rise to an App.
 
-|image4|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image8.png
 
 **App**
 
@@ -338,7 +338,7 @@ Two sided markets are notoriously hard to bootstrap. The usual approach is to cr
 
 We have an additional wrinkle in that NuCalm can be deployed in a completely isolated on-prem installations where the users might want to publish Blueprints for internal consumption. 
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image1.png
 
 Functions of an AppStore
 ************************
@@ -401,7 +401,7 @@ Publishers have various overlapping incentives to build Blueprints.
 
 **Publisher Workflow**
 
-|image1|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image2.png
 
 **Publisher Friction**
 
@@ -419,7 +419,7 @@ Consumers use the published blueprints to deploy and manage Apps.
 
 Consumer Workflow:
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/nucalm/image3.png
 
 
 .. |image0| image:: nucalm/media/image1.png
