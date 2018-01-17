@@ -11,14 +11,14 @@ applications and services at high velocity: evolving and improving products at a
 traditional software development and infrastructure management processes. This speed enables organizations to better serve
 their customers and compete more effectively in the market.
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/devops/image3.png
 
 Under a DevOps model, development and operations teams are no longer “siloed.” Sometimes, these two teams are merged into a
 single team where the engineers work across the entire application lifecycle, from development and test to deployment to
 operations, and develop a range of skills not limited to a single function. Quality assurance and security teams may also
 become more tightly integrated with development and operations and throughout the application lifecycle.
 
-|image1|
+.. figure:: http://s3.nutanixworkshops.com/calm/devops/image4.png
 
 These teams use practices to automate processes that historically have been manual and slow. They use a technology
 stack and tooling which help them operate and evolve applications quickly and reliably. These tools also help engineers
@@ -71,7 +71,7 @@ DevOps Practices
 There are a few key practices that help organizations innovate faster through automating and streamlining the software
 development and infrastructure management processes. Most of these practices are accomplished with proper tooling.
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/devops/image1.png
 
 One fundamental practice is to perform very frequent but small updates. This is how organizations innovate faster for
 their customers. These updates are usually more incremental in nature than the occasional updates performed under traditional 
