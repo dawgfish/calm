@@ -54,22 +54,22 @@ Users are dropped into the Applications tab by default, and can see all the appl
 
 **Tab review:**
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image2.png
 
 Part 2: Blueprint Workspace - Publish Blueprints
 ************************************************
 
 Navigate to the *Blueprint Workspace* by clicking (|image1|) icon located on the left tool ribbon.  This will open the Blueprint Workspace where self-authored blueprints are staged for editing, publishing, or launching as an application.
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image17.png
 
 Select an *Active* working Blueprint by clicking on the *Name* and opening the workspace.  With the workspace open, Click the |image3| action located at the top of the Blueprint workspace tool bar. 
 
-|image4|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image15.png
 
 A modal dialog will appear.  Verify the *Name* and *Description*, and click the Publish button. 
 
-|image5|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image18.png
 
 
 Part 3: Marketplace Manager - Approve Blueprint
@@ -81,11 +81,11 @@ Navigate to the Marketplace Manager by clicking (|image6|) icon located on the l
 
 To approve the Blueprint, click the *Approval Pending* action located along the top tool-bar of the *Marketplace Manager*.
 
-|image7|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image19.png
 
 Click the checkbox to the left of the *Blueprint Name*. 
 
-|image8|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image20.png
 
 You can choose to reject, approve, or launch the blueprint.
 
@@ -95,20 +95,20 @@ You can choose to reject, approve, or launch the blueprint.
 
 Click *Approve* to approve the Bluerpint for publication.  Once the application has been successfully approved, assign the **Category** and **Project Shared With** as shown below and click **Apply**.
 
-|image9|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image21.png
 
 Click **Publish** to publish the Blueprint to the Marketplace. Once the Blueprint has been successfully published, the dialog should appear as follows:
 
-|image10|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image22.png
 
 
 Verify the Blueprint's publication status by clicking on the **Marketplace Blueprints** action located in the tool-bar along the top of the **Marketplace Manager**.  Scroll through the Blueprints to find your Blueprint
 
-|image11|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image23.png
 
 Navigate to the Marketplace by clicking (|image6|) icon located on the left tool ribbon.  This will open the Marketplace where Blueprints are staged for collaboration and launching as an application.
 
-|image12|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image24.png
 
 Part 4: Edit Project Workspace
 ******************************
@@ -120,7 +120,7 @@ Before a Bluerpint can be launched from the Marketplace the Project's Environmen
 
 This can be done in the Projects Manager. Navigate to the the Projects Manager by clicking the(|image13|)icon located on the left tool ribbon.  This will open the Projects Manager where projects are persisted.
 
-|image14|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image26.png
 
 Click the Project name associated with or assigned to with Blueprint during publication.  For this exercise the project is **Calm**.
 
@@ -129,7 +129,7 @@ To assign a user and a network to the Project, click the **Environment** action 
 - **Network:**  *bootcamp*
 - **Credentials**: *user: root*, *password: nutanix/4u*
 
-|image15|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image27.png
 
 Once configured, click save.
 
@@ -138,31 +138,31 @@ Part 5: Launch Blueprint from the Marketplace
 
 Navigate to the Marketplace by clicking (|image6|) icon located on the left tool ribbon.  This will open the Marketplace. Once Marketplace is displayed, the Blueprint icon published from previous steps should be visible...
 
-|image12|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image24.png
 
 
 Click the Blueprint Icon associated with the previous **Publish** exercises/steps and then click **Launch** to deploy the Blueprint as an application.
 
-|image16|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image28.png
 
 
 A Modal dialog will appear allowing you to select the project.  Select the **Calm** Project and click *Launch*.
 
-|image17|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image29.png
 
 Assign a name to the Applcation and click *Create*
 
-|image18|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image30.png
 
 Monitor the execution of the Applciation until complete.
 
-|image19|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab8/image31.png
 
 
 .. |image0| image:: lab8/media/image2.png
-.. |image1| image:: lab8/media/image14.png
+.. |image1| image:: http://s3.nutanixworkshops.com/calm/lab8/image14.png
 .. |image2| image:: lab8/media/image17.png
-.. |image3| image:: lab8/media/image16.png
+.. |image3| image:: http://s3.nutanixworkshops.com/calm/lab8/image16.png
 .. |image4| image:: lab8/media/image15.png
 .. |image5| image:: lab8/media/image18.png
 .. |image6| image:: lab8/media/image10.png
