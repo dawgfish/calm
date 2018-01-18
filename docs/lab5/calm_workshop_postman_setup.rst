@@ -10,9 +10,9 @@ The following steps assumes you have Postman installed.
 
 Create a **Collection**, give it a name (i.e. Nutanix), and save it:
 
-|image1|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab5/image5.png
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab5/image6.png
 
 Create Subfolders
 *****************
@@ -26,7 +26,7 @@ Create the following subfolders within the collection:
 
 The Collection and subfolders should appear as follows:
 
-|image3|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab5/image4.png
 
 .. |image1| image:: ./media/image5.png
 .. |image2| image:: ./media/image6.png
