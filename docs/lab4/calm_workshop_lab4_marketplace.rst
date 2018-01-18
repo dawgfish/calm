@@ -46,7 +46,7 @@ You are, by default, dropped into the Applications tab and can see all the insta
 
 **Tab review:**
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab4/image2.png
 
 Part 2: Marketplace Control - Publish Blueprints
 ************************************************
@@ -61,50 +61,50 @@ In this exercise we'll walk through the steps to:
 
 Make sure *Marketplace Blueprints* is selected along the top of the Blueprint grid. Locate the **Mongo** blueprint within the grid and click the checkbox.
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab4/image5.png
 
 Once the **Mongo** Blueprint has been selected, a catalog is displayed to the right of the grid containing a blueprint description, category, and project assignment. Insure both **Database** and **Calm** are selected for the categroy and project repsectively, and click *apply*.
 
-|image3|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab4/image8.png
 
 Click **Publish**, and wait until the Blueprint status shows *published* in the grid as shown below.
 
-|image4|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab4/image9.png
 
 Part 3: Marketplace - Clone Blueprint
 *************************************
 
 Navigate to the Marketplace by clicking (|image5|) icon located on the left tool ribbon.  This will open the Marketplace. Once Marketplace is displayed, the **Mongo** Blueprint icon should be visible...
 
-|image6|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab4/image11.png
 
 
 Click the **Mongo** Blueprint Icon and then click **Clone** to copy the bluerpint to the Blueprint workspace for editing.
 
-|image7|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab4/image13.png
 
 Part 4: Edit + Debug + Launch Cloned Blueprint
 **********************************************
 
 Navigate the Blueprint workspace by clicking the (|image8|) icon located on the left tool ribbon.  This will open the Blueprint Workspace. 
 
-|image9|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab4/image15.png
 
 Click the red exclamation point to see a list fo error desriptions.  
 
-|image10|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab4/image16.png
 
 Fix each of the errors listed within the Blueprint.  Once all the errors have been corrected, make additional changes to each of the **Mongo** services (i.e. VM, Package, etc...) and launch the blueprint.  Continue to make chnages until the the Blueprint successfully deploys.  
 
-|image11|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab4/image17.png
 
 
 .. |image0| image:: lab4/media/image2.png
-.. |image1| image:: lab4/media/image4.png
+.. |image1| image:: http://s3.nutanixworkshops.com/calm/lab4/image4.png
 .. |image2| image:: lab4/media/image5.png
 .. |image3| image:: lab4/media/image8.png
 .. |image4| image:: lab4/media/image9.png
-.. |image5| image:: lab4/media/image10.png
+.. |image5| image:: http://s3.nutanixworkshops.com/calm/lab4/image10.png
 .. |image6| image:: lab4/media/image11.png
 .. |image7| image:: lab4/media/image13.png
 .. |image8| image:: lab4/media/image14.png
