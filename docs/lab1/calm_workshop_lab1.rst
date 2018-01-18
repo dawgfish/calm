@@ -21,7 +21,7 @@ Lab Overview
 Welcome to the Calm Hands-On-Lab - Simple Blueprint. What we’re going to
 do here is make a basic blueprint:
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image1.png
 
 This is a basic MySQL Deployment. In this lab we’ll start with a very
 basic, single service.
@@ -63,7 +63,7 @@ the instances of applications that have been launched from a blueprint.
 
 For now, let’s step through each tab:
 
-|image1|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image2.png
 
 Part 2: Your Entry Level Blueprint
 ***********************************
@@ -76,7 +76,7 @@ Part 2 provides the steps to create a simple service.
 
 3. Assign this Blueprint to the Default Project Welcome to the Blueprint Editor! Let’s take a look at the interface.
 
-|image3|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image4.png
 
 In general, the Blueprint creation flow goes:
 
@@ -90,7 +90,7 @@ In general, the Blueprint creation flow goes:
 
 There are 2 more buttons that are helpful to use while making a blueprint:
 
-|image4|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image5.png
 
 Let’s get started by setting up the basics
 
@@ -98,7 +98,7 @@ Let’s get started by setting up the basics
 
 2. Click on Credentials ( |image5|) button ○ Credentials are unique per blueprint
 
-|image6|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image7.png
 
 +-----------------------+---------------+
 | **Name**              | Your choice   |
@@ -125,10 +125,10 @@ specifies if this variable should be static (and only editable here) or
 should be able to be changed during the Launch Process.
 
 Variables can be referred to while configuring VMs using the
-**@@{variable\_name}@@** construct ­ Calm will evaluate and replace that
+**@@{variable\_name}@@** construct - Calm will evaluate and replace that
 string before sending it down to the VM
 
-|image7|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image8.png
 
 +----------------------+------------------------------------------------------+
 | **Variable Name**    | **Value**                                            |
@@ -160,7 +160,7 @@ With these basics setup, let’s create our first service.
 
 Now update the VM Configuration section to match the following:
 
-|image10|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image11.png
 
 1. Scroll to the bottom and add a NIC attached to the **DemoVMs** network
 
@@ -246,7 +246,7 @@ need to increment this as instance names must be unique.
 This will now bring you to the **Instance** page. The bar across the top
 allows you to see various information about the instance:
 
-|image11|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image12.png
 
 **Manage** allows you to see all the actions you can run against this
 instance (we’ll get to creating custom actions in a moment).
@@ -254,9 +254,9 @@ instance (we’ll get to creating custom actions in a moment).
 You can also click on the arrow all the right on an action to see what
 it does and ­ if it’s currently running ­ where in the process it is.
 
-|image12|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image13.png
 
-|image13|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image14.png
 
 The **Services** tab show you information about the VMs that make up
 this instance.
@@ -264,18 +264,18 @@ this instance.
 Finally the **Audit** tab shows you what actions have been called
 against this instance and by who. You can also click on any action (or sub­action) and get the logs from that event.
 
-|image14|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image15.png
 
-|image15|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab1/image16.png
 
 **NOTE:** In this lab, the only active project is **Default** and all users are a member of it.
 
 .. |image0| image:: lab1/media/image1.png
 .. |image1| image:: lab1/media/image2.png
-.. |image2| image:: lab1/media/image3.png
+.. |image2| image:: http://s3.nutanixworkshops.com/calm/lab1/image3.png
 .. |image3| image:: lab1/media/image4.png
 .. |image4| image:: lab1/media/image5.png
-.. |image5| image:: lab1/media/image6.png
+.. |image5| image:: http://s3.nutanixworkshops.com/calm/lab1/image6.png
 .. |image6| image:: lab1/media/image7.png
 .. |image7| image:: lab1/media/image8.png
 .. |image10| image:: lab1/media/image11.png
