@@ -452,7 +452,7 @@ In this section we'll Navigate the REST API Explorer to execute importing a blue
 
 9. Select the entire JSON contents shown in the left JSON view panel and copy it to the Blueprint **POST** */blueprints/import_json* *body* within the v3 REST API Explorer.
 
-.. figure:: http://s3.nutanixworkshops.com/calm/lab5/image29.png|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab5/image29.png
 
 10. Click *Try it out!* to invoke the **POST** */blueprints/import_json* request. 
 
