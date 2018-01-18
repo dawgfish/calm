@@ -21,7 +21,7 @@ Lab Overview
 Welcome to the Calm Hands-On-Lab - Intermediate Blueprint What we’re
 going to do here is extend a basic blueprint:  
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab2/image1.png
 
 This is a basic LAMP Stack (Linux Apache MySQL PHP). In
 this lab we’ll build on the previous 1x simple service MySQL
@@ -57,14 +57,14 @@ Getting Familiar with the Tools
 3. Click on the Apps tab across the top of Prism
 
 Welcome to Calm! Upon accessing this page you will now notice a new
-ribbon along the left ­ this is used to navigate through Calm.
+ribbon along the left - this is used to navigate through Calm.
 
 You are, by default, dropped into the Applications tab and can see all
 the instances of applications that have been launched from a blueprint.
 
 For now, let’s step through each tab:
 
-|image1|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab2/image2.png
 
 Part 2: Creating a Web Server
 *****************************
@@ -82,9 +82,9 @@ Service created from Lab #1 Simple Blueprint service(MySQL).
    and configure the rest of the application as we did with the DB
    server
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab2/image3.png
 
-|image3|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab2/image4.png
 
 Be sure to scroll down, add a NIC and configure the credentials.
 
@@ -160,10 +160,10 @@ Here you see variables like before, but also something new:
 This is a **Calm Macro**. What this does it get the IP address from
 the \ **MySQL** server and replaces that in this script. With that it
 doesn’t matter what IP the DB comes up with, the PHP server will always
-know where it’s DB is. There are many more native macros ­ a full list
+know where it’s DB is. There are many more native macros - a full list
 will be available in documentation at launch!
 
-Fill­in the uninstall script with the same basic exit as before:
+Fill in the uninstall script with the same basic exit as before:
 
 .. code-block:: bash
 
@@ -181,7 +181,7 @@ This tells Calm to hold running the script until the **MySQL** service
 is up. **Save** the blueprint, then click on the **Create** action from
 the **Overview** pane to see this.
 
-Part 3: Scale­out PHP and Load Balancer
+Part 3: Scale-out PHP and Load Balancer
 ***************************************
 
 In this part we’re going to finally finish the provisioning blueprint.  
@@ -195,9 +195,9 @@ In this part we’re going to finally finish the provisioning blueprint.  
 This service will now deploy 2 VMs with the same configuration rather
 than just 1
 
-    |image4|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab2/image5.png
 
-    |image5|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab2/image6.png
 
 We’ve now added redundancy or load balancing capacity to the PHP server,
 but need something to actually to the load balancing.
@@ -208,9 +208,9 @@ but need something to actually to the load balancing.
 
 Under **Package** configure the following install script
 
-|image6|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab2/image7.png
 
-|image7|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab2/image4.png
 
 Under **Package** configure the following install script:
 
@@ -289,7 +289,7 @@ Add the following uninstall script
 
 Your blueprint should now look like this:
 
-|image8|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab2/image8.png
 
 Part 4: Next steps
 ******************
@@ -312,7 +312,7 @@ order
 provisioning arrows. Rather than pointing at what this subaction depends
 on, it instead points in the order of operations.
 
-|image9|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab2/image9.png
 
 Application Profiles
 
@@ -322,7 +322,7 @@ deployment configuration or move to a different cloud. With multiple
 profiles, you will be asked which one you want when you go to launch the
 application.
 
-|image10|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab2/image10.png
 
 **NOTE:** In this lab, the only active project is **Default** and all
 users are a member of it.
