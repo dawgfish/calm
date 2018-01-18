@@ -52,25 +52,25 @@ You are, by default, dropped into the Applications tab and can see all the insta
 
 **Tab review:**
 
-|image0|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image0.png
 
 Part 2: Import Blueprint
 ************************
 
 Navigate to the Blueprint Workspace by clicking (|image1|) icon located on the left tool ribbon.  This will open the Blueprint Workspace where self-authored blueprints are staged editing, publishing, and/or launching as Applications.  When the Blueprint grid appears, click the **Upload Blueprint** button located along the top of the Blueprint grid.  
 
-|image2|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image2.png
 
 Navigate your SMB share for the **.../CalmWorkshp/Troubleshooting.json** blueprint.  Select the file and continue.  A modal dialog will appear prompting for a name and project when saving. Complete the fileds as show below and click **upload**. This will save the blueprint to the workspace.
 
 - **Name:** Calm Workshop Blueprint Debug
 - **Project:** Calm
 
-|image3|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image3.png
 
 The Blueprint workspace should appear as follows.  
 
-|image4|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image4.png
 
 Since Blureprints are exported as clear text, they do not retain credential information that could potentially be used maliciously.  You'll be required to set the **Credentials** to *User: root*,  *Password: nutanix/4u*.  Save the Blueprint.  The red **!** should no longer appear.
 
@@ -80,7 +80,7 @@ Part 3: Launch Blueprint
 
 Once the blueprint has been successfully saved, click the (|image5|) button to lanuch the Blueprint.  Name the application with *Calm Workshop Troubleshooting*.  
 
-|image6|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image6.png
 
 
 Click **Create** to launch the application.
@@ -91,11 +91,11 @@ Part 4: Monitor Blueprint Execution
 
 Once the application has been launched, the Application Management Dialog will appear showing the state of the Application.  Click the *Audit* button in the tool-bar located along the top of the Application Management Dialog to monitor or audit the provisioning progress of the application.
 
-|image7|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image7.png
 
 Continue to monitor the progress by expanding the **Create**
 
-|image8|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image8.png
 
 
 Part 5: Debug Blueprint Errors
@@ -103,45 +103,45 @@ Part 5: Debug Blueprint Errors
 
 If an error occurs during the execution of a Blueprint, both the Application Management Dialog the and the *Audit* tree will show the error.
 
-|image9|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image9.png
 
-|image10|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image10.png
 
 Using the *Audit* tree and expanding **Create**, scroll down to the first failure occurrance to read the logs and compare it with the script.
 
-|image11|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image11.png
 
 Expand the **PackageInstallTask** for **Jenkins_Master-Package Install**.  You can toggle between the *script* and the *script output* to diagnose the problem...
 
-|image12|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image12.png
 
 Examine the script's contents and it's output to get an idea of what failed.
 
-|image13|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image13.png
 
 Make a note of what you suspect is failing. Make the changes within the Blueprint by navigating to the Blueprint Workspace from the Application Managment Dialog **Overview** and clicking the *Blueprint* link.
 
-|image14|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image14.png
 
 Part 6: Cleanup Failed Blueprints
 *********************************
 
 Clean up the Application workspace by deleting the failed applications.  Click the *Manage* button in the tool-bar located along the top of the Application Management Dialog to execute an application action.  Click *Delete* to start a delete task.
 
-|image15|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image15.png
 
 You can monitor the completion of the application deletion by clicking *Audit*
 
-|image16|
+.. figure:: http://s3.nutanixworkshops.com/calm/lab3/image16.png
 
 Repeat parts 4-6 until application successfully deploys...
 
 .. |image0| image:: lab3/media/image0.png
-.. |image1| image:: lab3/media/image1.png
+.. |image1| image:: http://s3.nutanixworkshops.com/calm/lab3/image1.png
 .. |image2| image:: lab3/media/image2.png
 .. |image3| image:: lab3/media/image3.png
 .. |image4| image:: lab3/media/image4.png
-.. |image5| image:: lab3/media/image5.png
+.. |image5| image:: http://s3.nutanixworkshops.com/calm/lab3/image5.png
 .. |image6| image:: lab3/media/image6.png
 .. |image7| image:: lab3/media/image7.png
 .. |image8| image:: lab3/media/image8.png
