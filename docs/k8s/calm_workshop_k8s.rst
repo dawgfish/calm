@@ -5,15 +5,19 @@ Kubernetes
 Overview
 ********
 
-Kubernetes is a vendor-agnostic cluster and container management tool, open-sourced by Google in 2014. It provides a 
-“platform for automating deployment, scaling, and operations of application containers across clusters of hosts”.
-Above all, this lowers the cost of cloud computing expenses and simplifies operations and architecture.
-
+Kubernetes (also known as K8s) is a vendor-agnostic cluster and container management tool, created by Google and later donated to the Cloud Native Computing Foundation in 2014.  The idea behind Kubernetes was to build a system designed to run enterprise-class, cloud-enabled. and web-scalable IT workloads. It provides a “platform for automating deployment, scaling, and operations of application containers across clusters of hosts”.  Above all, it lowers the cost of cloud computing expenses and simplifies operations and architecture.
 
 Kubernetes and the Need for Containers
 **************************************
 
-Before we explain what Kubernetes does, we need to explain what containers are and why people are using those.
+Before we explain what Kubernetes does, we need to explain what containers are, how they differ from VMsm, and why people are using those.
+
+**Virtial Machine**
+
+A virtual machine app creates a virtualized environment—called, simply enough, a *virtual machine* that behaves like a separate computer system, complete with virtual hardware devices. The VM runs as a process on your current operating system. 
+
+*Source: How-to Geek*
+
 
 **Containers:**
 
@@ -77,6 +81,13 @@ for that long is one of its key selling points. Two years ago Google pushed Kube
 Kubernetes is a cluster and container management tool. It lets you deploy containers to clusters, meaning a network
 of virtual machines. It works with different containers, not just Docker.
 
+Kubernetes terminologies:
+
+- Pods– Pods are a collection of one or more containers. It acts as a Kubernetes’ core unit of management. Pods set the logical boundary for containers sharing the same context and resources.
+- Labels– Labels are arbitrary tags that can be placed on the above work units to mark them as a part of a group. These can then be selected for management purposes and action targeting.
+- Services– Services is a unit that acts as a basic load balancer and ambassador for other containers. A service groups together logical collections of pods that perform the same function to give an impression of single entity.
+- Replication Controller– A more complex version of pod is known as replicated pod. These are handled a type of work unit known as a replication controller. Replication controllers make sure that a specific number of pod replicas are running 
+
 **Kubernetes Basics**
 
 The basic idea of Kubernetes is to further abstract machines, storage, and networks away from their physical implementation.
@@ -84,12 +95,43 @@ So it is a single interface to deploy containers to all kinds of clouds, virtual
 
 Here are a few of **Kubernetes** concepts to help understand what it does.
 
+**Master component**
+
+The master node is the one that is responsible for the management of Kubernetes cluster. This is the main entry point of all administrative tasks. The master node, also known as the control plane, is the one that is managing the worker nodes, where the actual services are running.
+
+A master node is made of following components:
+
+- API Server
+   API Server is the main management point of the entire cluster, as it allows a user to configure many of Kubernetes’   workloads and organizational units. The API server is also the entry points for all the REST commands used to control the cluster. That means several different tools and libraries can easily communicate with it.
+
+- etcd storage
+   The etcd is a simple, lightweight, distributed key-value store that can be distributed across multiple nodes. The etcd storage was developed by the CoreOS team to be mainly used for shared configuration and service discovery.  Kubernetes uses etcd to store configuration data that can be used by each of the nodes in the cluster
+
+- Scheduler
+   The scheduler component configures pods and services onto the nodes. Moreover, the scheduler is also responsible for tracking resource utilization on each host to make sure that workloads are not scheduled in excess of the available resources.
+
+- Controller-manager
+   The controller manager service is a general service that is responsible for controllers that regulate the state of the cluster and perform routine tasks. The example of such a controller is the replication controller. As it ensures that the number of replicas defined for a service matches the number currently deployed on the cluster. The details of these operations are written to etcd, where the controller manager watches for changes through the API server.
+
 **Node**
 
 A node is a physical or virtual machine. It is not created by Kubernetes. You create those with a cloud operating system, 
 like OpenStack or Amazon EC2, or manually install them. So you need to lay down your basic infrastructure before you use 
 Kubernetes to deploy your apps. But from that point it can define virtual networks, storage, etc. For example, you could use 
 OpenStack Neutron or Romana to define networks and push those out from Kubernetes.
+
+Every single node has the services necessary to run **pods** and is managed by the **master components**. 
+
+The services on a node include:
+
+- Docker
+   Docker is responsible for downloading the images and starting the containers. It runs on the encapsulated application containers in a lightweight operating environment. Each unit of work is implemented as series containers that must be deployed.
+
+- kubelet
+   kubelet gets the configuration of a pod from the API server and ensures that the described containers are up and running. This is the worker service that’s responsible for communicating with the master node. It is responsible for relaying information to and from the control plane services, as well as interacting with the etcd store to read configuration details or write new values.
+
+- kube-proxy
+   Kube-proxy runs on each node to deal with individual host sub-netting and ensure that the services are available to external parties. It serves as a network proxy and a load balancer for a service on a single worker node and manages the network routing for TCP and UDP packets.
 
 **Pods**
 
@@ -126,17 +168,22 @@ turned into hypervisors (i.e, a platform to run virtual machines).
 Use Cases
 *********
 
-So why would you use Kubernetes on, for example, Amazon EC2, when it has its own tool for orchestration (CloudFormation)? 
-Because with Kubernetes you can use the same orchestration tool and command-line interfaces for all your different systems. 
+So what platforms or ecosystems would you use Kubernetes on, for example, Amazon EC2, when it has its own tool for orchestration (CloudFormation)? 
+
+With Kubernetes you can use the same orchestration tool and command-line interfaces for all your different systems. 
 Amazon CloudFormation only works with EC2. So with Kubernetes you could push containers to the Amazon cloud, your in-house 
 virtual and physical machines as well, and other clouds.
+
+Benefits of Kubernetes
+**********************
+
+Kubernetes is designed in a way that provides scalability, availability, security, and portability. Reliability is another main benefit of Kubernetes and can be used to prevent failure from impacting the availability or performance of the application. Moreover, Kubernetes enables the users to respond efficiently to customers demand by scaling or rolling out new innovative features. It is designed in such a way that it offers freedom of choice when choosing operating systems, container runtimes, processor architectures, cloud platforms and PaaS. It also improves the cost of infrastructure by effectively dividing the workload across available resources. This shows that while other technologies are doing a commendable job at handling the cluster aspect, Kubernetes is providing a better management system.
+
 
 Summary
 *******
 
-What is Kubernetes? It is an orchestration tool for containers. What are containers? They are small virtual machines that 
-run ready-to-run applications on top of other virtual machines or any host OS. They greatly simplify deploying applications. 
-And they make sure machines are fully-utilized. All of this lowers the cost of cloud subscriptions, further abstracts the 
-data center, and simplifies operations and architecture. To get started learning about it, the reader can install MiniKube to 
-run it all on one machine and play around with it.
+**What is Kubernetes?** It is an orchestration tool for containers. **What are containers?** They are small virtual machines that run ready-to-run applications on top of other virtual machines or any host OS. They greatly simplify deploying applications. They make sure machines are fully-utilized. 
+
+All of this lowers the cost of cloud subscriptions, further abstracts the data center, and simplifies operations and architecture. To get started learning about it, the reader can install MiniKube to run it all on one machine and play around with it.
 
