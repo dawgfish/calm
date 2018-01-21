@@ -10,6 +10,18 @@ retirement. It also refers to how changes to an application are documented and t
 
 .. figure:: http://s3.nutanixworkshops.com/calm/alm/image1.png
 
+Defining application lifecycle management (ALM) isn’t easy. Different people (and different vendors) take
+quite different perspectives. Still, ALM is an important topic, and so understanding what it encompasses is
+also important.
+
+.. figure:: http://s3.nutanixworkshops.com/calm/alm/image9.png
+
+It’s common to equate ALM with the software development lifecycle (SDLC). Yet this simple approach is
+too limiting; ALM is much more than just SDLC. In fact, an application’s lifecycle includes the entire time
+during which an organization is spending money on this asset, from the initial idea to the end of the
+application’s life. Application lifecycle management (ALM) is the supervision of a software application from its initial planning through retirement. It also refers to how changes to an application are documented and tracked.
+
+
 Application Portfolio Management
 ********************************
 
