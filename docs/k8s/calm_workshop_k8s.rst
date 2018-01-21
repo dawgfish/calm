@@ -7,6 +7,8 @@ Overview
 
 Kubernetes (also known as K8s) is a vendor-agnostic cluster and container management tool, created by Google and later donated to the Cloud Native Computing Foundation in 2014.  The idea behind Kubernetes was to build a system designed to run enterprise-class, cloud-enabled. and web-scalable IT workloads. It provides a “platform for automating deployment, scaling, and operations of application containers across clusters of hosts”.  Above all, it lowers the cost of cloud computing expenses and simplifies operations and architecture.
 
+.. figure:: http://s3.nutanixworkshops.com/calm/k8s/image2.png
+
 Kubernetes and the Need for Containers
 **************************************
 
@@ -17,7 +19,6 @@ Before we explain what Kubernetes does, we need to explain what containers are, 
 A virtual machine app creates a virtualized environment—called, simply enough, a *virtual machine* that behaves like a separate computer system, complete with virtual hardware devices. The VM runs as a process on your current operating system. 
 
 *Source: How-to Geek*
-
 
 **Containers:**
 
@@ -43,7 +44,6 @@ that can be installed anywhere.
 Containers are so popular in todays modern datacenter, they threaten to make VMs obsolete...
 
 **Docker Hub**
-
 
 But making the container small is not the only advantage. The container can be deployed just like a VM 
 template, meaning an application that is ready to go that requires little or no configuration.
@@ -80,6 +80,8 @@ for that long is one of its key selling points. Two years ago Google pushed Kube
 
 Kubernetes is a cluster and container management tool. It lets you deploy containers to clusters, meaning a network
 of virtual machines. It works with different containers, not just Docker.
+
+.. figure:: http://s3.nutanixworkshops.com/calm/k8s/image1.png
 
 Kubernetes terminologies:
 
