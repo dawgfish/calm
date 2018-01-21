@@ -59,7 +59,7 @@ Governance
 In ALM, the purpose of governance is to make sure the application always provides what the business
 needs. Figure 2 gives a close-up view of ALM governance, providing a bit more detail on what it entails.
 
-. figure:: http://s3.nutanixworkshops.com/calm/alm/image11.png
+.. figure:: http://s3.nutanixworkshops.com/calm/alm/image11.png
 
 The first step in ALM governance is business case development. As Figure 2 shows, this analysis happens
 before the development process begins. Once the business case is approved, application development
@@ -87,7 +87,7 @@ While equating ALM with the software development process isn’t accurate, devel
 fundamental part of every custom application’s lifecycle. Figure 3 takes a closer look at this aspect of
 ALM.
 
-. figure:: http://s3.nutanixworkshops.com/calm/alm/image12.png
+.. figure:: http://s3.nutanixworkshops.com/calm/alm/image12.png
 
 Once the business case is approved, the software development lifecycle begins. If we expanded the SDLC
 parts of the Development line shown in the figure, a modern process would probably show software
@@ -111,7 +111,7 @@ Operations
 Every deployed application must be monitored and managed. Figure 4 shows some of the important parts
 in this operations process.
 
-. figure:: http://s3.nutanixworkshops.com/calm/alm/image13.png
+.. figure:: http://s3.nutanixworkshops.com/calm/alm/image13.png
 
 As with Governance, the Operations line is intimately connected to the Development line. For example,
 planning for deployment likely begins shortly before the application is completed, and the act of
