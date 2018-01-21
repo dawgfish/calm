@@ -262,7 +262,10 @@ The term “container” is really just an abstract concept to describe how a fe
 
 This is really all there is to a Docker container (of course, the devil is in the implementation details — like how to manage the interactions between the various components).
 
-The Future of Docker: Docker and VMs Will Co-exist...
+The Future of Docker: 
+*********************
+
+Docker and VMs Will Co-exist...
 
 While Docker is certainly gaining a lot of steam, I don’t believe it will become a real threat to VMs. Containers will continue to gain ground, but there are many use cases where VMs are still better suited.
 
