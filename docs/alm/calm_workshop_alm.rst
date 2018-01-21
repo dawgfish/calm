@@ -31,8 +31,6 @@ Application portfolio management is a critical part of IT governance. It enables
 
 Application Portfolio Management is an approach to managing IT software applications and software-based services across the enterprise. Mapping the universe of software applications against a common set of strategic drivers of investment allows you to make critical decisions about which applications to maintain, invest, retire or consolidate. Our approach to APM is centered on cost, performance and strategic alignment with business needs.
 
-.. figure:: http://s3.nutanixworkshops.com/calm/alm/image2.png
-
 An APM system uses a scoring algorithm for generating reports about the value of each application and the health of the IT infrastructure as a whole. By gathering metrics like an application's age, how often it's used, the cost it takes to maintain it and its interrelationships with other applications, a manager can use more than just an educated guess to decide whether or not a particular application should be kept, updated, retired or replaced. 
 
 
@@ -41,15 +39,20 @@ Application Lifecycle Management
 
 ALM is a very broad term that reflects a change in attitude towards software development that is also expressed in the term DevOps. DevOps blends the tasks performed by a company's application development and systems operations teams. In the past, a development team might work independently using a waterfall development model and hand off the completed software application to an operations team for deployment and maintenance. Today, it is more likely that developers will use an agile model and remain involved with the application after deployment, working with business owners and operations to make incremental changes as needed.  
 
-.. figure:: http://s3.nutanixworkshops.com/calm/alm/image3.png
+ALM can be divided into three distinct areas: governance, development, and operations. Figure 1
+illustrates this, showing each of these three aspects on its own horizontal line.
 
-There are many ALM tools available for tracking application changes. These range from dedicated ALM products that monitor an application from inception to completion, automatically sorting files into logical buckets as changes are noted, to simple wikis that require team members to record changes manually.
+.. figure:: http://s3.nutanixworkshops.com/calm/alm/image10.png
 
-- Application Lifecycle Management (ALM) is a continuous process of managing the life of an application through governance, development and maintenance.
+Like a human life, an application’s lifecycle is demarcated by significant events. It begins with an idea:
+"Why don’t we build something that does this?" Once the application is created, the next big event is
+deployment, when the application goes into production. And finally, when it no longer has business value, the application reaches end of life and is removed from service.
 
-- ALM is about managing the entire application lifecycle, from the initial application definition to application maintenance, retirement and everything in between.
+1. Governance, which encompasses all of the decision making and project management for this application, extends over this entire time.
+2. Development, the process of actually creating the application, happens first between idea and deployment. For most applications, the development process reappears again several more times in the application’s lifetime, both for upgrades and for wholly new versions.
+3. Operations, the work required to run and manage the application, typically begins shortly before deployment, then runs continuously until the application is removed from service. Each of these three areas is important, and so each is worth
+examining in more detail.
 
-- ALM as a superset, one that should include one or more SDLCs.
 
 
 Application Release Management
