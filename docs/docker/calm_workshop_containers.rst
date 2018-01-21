@@ -59,8 +59,8 @@ The one big difference between containers and VMs is that containers *share* the
 
 This diagram shows you that containers package up just the user space, and not the kernel or virtual hardware like a VM does. Each container gets its own isolated user space to allow multiple containers to run on a single host machine. We can see that all the operating system level architecture is being shared across containers. The only parts that are created from scratch are the bins and libs. This is what makes containers so lightweight.
 
-Where does Docker come in?
-**************************
+Enter Docker
+************
 
 Docker is an open-source project based on Linux containers. It uses Linux Kernel features like namespaces and control groups to create containers on top of an operating system.
 
