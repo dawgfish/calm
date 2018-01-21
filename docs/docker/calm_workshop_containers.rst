@@ -124,7 +124,7 @@ Once you’ve got your Dockerfile set up, you can use the docker build command t
   # Start with ubuntu 14.04
   FROM ubuntu:14.04
 
-  MAINTAINER preethi kasireddy iam.preethi.k@gmail.com
+  MAINTAINER m.jastad majastad@icloud.com
 
   # For SSH access and port redirection
   ENV ROOTPASSWORD sample
