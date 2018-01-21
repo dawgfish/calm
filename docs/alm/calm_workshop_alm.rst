@@ -188,6 +188,24 @@ Since Application Performance Management is sort of a ubiquitous term for anythi
 
 - Network based – Extrahop uses the term APM in regards to their ability to measure application performance based on network traffic. There is a whole product category called NPM that focuses on this type of solutions.
 
+Summary
+*******
+
+ALM is much more than just writing code. All three aspects—governance, development, and operations—
+are important. Think about a project that gets the initial governance aspects wrong, for example, perhaps
+by not understanding the business needs or failing to get the right stakeholders involved. No matter how
+well the organization does development and operations, this project won’t provide much business value.
+Similarly, a project that targets the right problems using a first-class development process might ignore
+operational issues, such as providing enough resources to run the application reliably. Once again, the
+business value this investment provides won’t be as large as it should be. Taking a broad view of ALM can
+help organizations avoid problems like these.
+
+Maximizing the value of the applications we create means doing all three aspects of ALM well. Achieving
+this goal isn’t easy, especially when today’s ALM tools aren’t as well integrated as they could be. Yet
+there’s no way around it: Taking a broad, holistic view of ALM is essential for improving this critical
+business process.
+
+
 .. |image0| image:: alm/media/image1.png
 .. |image1| image:: alm/media/image3.png
 .. |image2| image:: alm/media/image2.png
