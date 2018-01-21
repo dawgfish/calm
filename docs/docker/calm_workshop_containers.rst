@@ -5,7 +5,7 @@ Containers
 Overview
 ********
 
-Docker is a tool that enables you to create, deploy, and manage lightweight, stand-alone packages that contain everything needed to run an application (code, libraries, runtime, system settings, and dependencies). These packages are called containers.
+A container image is a lightweight, stand-alone, executable package of a piece of software that includes everything needed to run it: code, runtime, system tools, system libraries, settings. Available for both Linux and Windows based apps, containerized software will always run the same, regardless of the environment. Containers isolate software from its surroundings, for example differences between development and staging environments and help reduce conflicts between teams running different software on the same infrastructure.
 
 Each container is deployed with its own CPU, memory, block I/O, and network resources, all without having to depend upon an individual kernel and operating system. While it may be easiest to compare Docker and virtual machines, they differ in the way they share or dedicate resources.
 
@@ -68,13 +68,13 @@ Containers are far from new; Google has been using their own container technolog
 
 So why is Docker all of a sudden gaining steam?
 
-1. Ease of use: Docker has made it much easier for anyone — developers, systems admins, architects and others — to take advantage of containers in order to quickly build and test portable applications. It allows anyone to package an application on their laptop, which in turn can run unmodified on any public cloud, private cloud, or even bare metal. The mantra is: “build once, run anywhere.”
+1. **Ease of use:** Docker has made it much easier for anyone — developers, systems admins, architects and others — to take advantage of containers in order to quickly build and test portable applications. It allows anyone to package an application on their laptop, which in turn can run unmodified on any public cloud, private cloud, or even bare metal. The mantra is: “build once, run anywhere.”
 
-2. Speed: Docker containers are very lightweight and fast. Since containers are just sandboxed environments running on the kernel, they take up fewer resources. You can create and run a Docker container in seconds, compared to VMs which might take longer because they have to boot up a full virtual operating system every time.
+2. **Speed:** Docker containers are very lightweight and fast. Since containers are just sandboxed environments running on the kernel, they take up fewer resources. You can create and run a Docker container in seconds, compared to VMs which might take longer because they have to boot up a full virtual operating system every time.
 
-3. Docker Hub: Docker users also benefit from the increasingly rich ecosystem of Docker Hub, which you can think of as an “app store for Docker images.” Docker Hub has tens of thousands of public images created by the community that are readily available for use. It’s incredibly easy to search for images that meet your needs, ready to pull down and use with little-to-no modification.
+3. **Docker Hub:** Docker users also benefit from the increasingly rich ecosystem of Docker Hub, which you can think of as an “app store for Docker images.” Docker Hub has tens of thousands of public images created by the community that are readily available for use. It’s incredibly easy to search for images that meet your needs, ready to pull down and use with little-to-no modification.
 
-4. Modularity and Scalability: Docker makes it easy to break out your application’s functionality into individual containers. For example, you might have your Postgres database running in one container and your Redis server in another while your Node.js app is in another. With Docker, it’s become easier to link these containers together to create your application, making it easy to scale or update components independently in the future.
+4. **Modularity and Scalability:** Docker makes it easy to break out your application’s functionality into individual containers. For example, you might have your Postgres database running in one container and your Redis server in another while your Node.js app is in another. With Docker, it’s become easier to link these containers together to create your application, making it easy to scale or update components independently in the future.
 
 Last but not least, who doesn’t love the Docker whale? ;)
 
@@ -84,7 +84,6 @@ Fundamental Docker Concepts
 ***************************
 
 Now that we’ve got the big picture in place, let’s go through the fundamental parts of Docker piece by piece:
-
 
 **Docker Engine**
 
@@ -102,7 +101,6 @@ The Docker Client is what you, as the end-user of Docker, communicate with. Thin
   
   docker build iamageek/someImage .
   
-
 you are communicating to the Docker Client, which then communicates your instructions to the Docker Daemon.
 
 **Docker Daemon**
@@ -224,9 +222,9 @@ The contents of directories which have the same path within the overlaid branche
 
 Layered systems offer two main benefits:
 
-1. Duplication-free: layers help avoid duplicating a complete set of files every time you use an image to create and run a new container, making instantiation of docker containers very fast and cheap.
+1. **Duplication-free:** layers help avoid duplicating a complete set of files every time you use an image to create and run a new container, making instantiation of docker containers very fast and cheap.
 
-2. Layer segregation: Making a change is much faster — when you change an image, Docker only propagates the updates to the layer that was changed.
+2. **Layer segregation:** Making a change is much faster — when you change an image, Docker only propagates the updates to the layer that was changed.
 
 **Volumes**
 
@@ -236,36 +234,28 @@ Volumes are the “data” part of a container, initialized when a container is 
 
 A Docker container, as discussed above, wraps an application’s software into an invisible box with everything the application needs to run. That includes the operating system, application code, runtime, system tools, system libraries, and etc. Docker containers are built off Docker images. Since images are read-only, Docker adds a read-write file system over the read-only file system of the image to create a container.
 
-*Source: Docker*
-
 Moreover, then creating the container, Docker creates a network interface so that the container can talk to the local host, attaches an available IP address to the container, and executes the process that you specified to run your application when defining the image.
 
 Once you’ve successfully created a container, you can then run it in any environment without having to make changes.
 
 Double-clicking on “containers”
+*******************************
 
 Phew! That’s a lot of moving parts. One thing that always got me curious was how a container is actually implemented, especially since there isn’t any abstract infrastructure boundary around a container. After lots of reading, it all makes sense so here’s my attempt at explaining it to you!
 
 The term “container” is really just an abstract concept to describe how a few different features work together to visualize a “container”. Let’s run through them real quick:
 
 1. **Namespaces**
-    Namespaces provide containers with their own view of the underlying Linux system, limiting what the container can see and     access. When you run a container, Docker creates namespaces that the specific container will use.
-
-There are several different types of namespaces in a kernel that Docker makes use of, for example:
-
+    Namespaces provide containers with their own view of the underlying Linux system, limiting what the container can see and     access. When you run a container, Docker creates namespaces that the specific container will use.  There are several different types of namespaces in a kernel that Docker makes use of, for example:
    a. **NET:** Provides a container with its own view of the network stack of the system (e.g. its own network devices, IP   addresses, IP routing tables, /proc/net directory, port numbers, etc.).
    b. **PID:** PID stands for Process ID. If you’ve ever ran ps aux in the command line to check what processes are running on your system, you’ll have seen a column named “PID”. The PID namespace gives containers their own scoped view of processes they can view and interact with, including an independent init (PID 1), which is the “ancestor of all processes”.
    c. **MNT:** Gives a container its own view of the “mounts” on the system. So, processes in different mount namespaces have different views of the filesystem hierarchy.
    d. **UTS:** UTS stands for UNIX Timesharing System. It allows a process to identify system identifiers (i.e. hostname, domainname, etc.). UTS allows containers to have their own hostname and NIS domain name that is independent of other containers and the host system.
    e. **IPC:** IPC stands for InterProcess Communication. IPC namespace is responsible for isolating IPC resources between processes running inside each container.
-   f. **USER:** This namespace is used to isolate users within each container. It functions by allowing containers to have a different view of the uid (user ID) and gid (group ID) ranges, as compared with the host system. As a result, a process’s uid and gid can be different inside and outside a user namespace, which also allows a process to have an unprivileged user outside a container without sacrificing root privilege inside a container.
-
-Docker uses these namespaces together in order to isolate and begin the creation of a container. The next feature is called control groups.
+   f. **USER:** This namespace is used to isolate users within each container. It functions by allowing containers to have a different view of the uid (user ID) and gid (group ID) ranges, as compared with the host system. As a result, a process’s uid and gid can be different inside and outside a user namespace, which also allows a process to have an unprivileged user outside a container without sacrificing root privilege inside a container.  Docker uses these namespaces together in order to isolate and begin the creation of a container. The next feature is called control groups.
 
 2. **Control groups**
-   Control groups (also called cgroups) is a Linux kernel feature that isolates, prioritizes, and accounts for the resource usage (CPU, memory, disk I/O, network, etc.) of a set of processes. In this sense, a cgroup ensures that Docker containers only use the resources they need — and, if needed, set up limits to what resources a container *can* use. Cgroups also ensure that a single container doesn’t exhaust one of those resources and bring the entire system down.
-
-Lastly, union file systems is another feature Docker uses:
+   Control groups (also called cgroups) is a Linux kernel feature that isolates, prioritizes, and accounts for the resource usage (CPU, memory, disk I/O, network, etc.) of a set of processes. In this sense, a cgroup ensures that Docker containers only use the resources they need — and, if needed, set up limits to what resources a container *can* use. Cgroups also ensure that a single container doesn’t exhaust one of those resources and bring the entire system down.  
 
 3. **Isolated Union file system:**
    Described above in the Docker Images section...
