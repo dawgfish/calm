@@ -53,7 +53,71 @@ deployment, when the application goes into production. And finally, when it no l
 3. Operations, the work required to run and manage the application, typically begins shortly before deployment, then runs continuously until the application is removed from service. Each of these three areas is important, and so each is worth
 examining in more detail.
 
+Governance
+==========
 
+In ALM, the purpose of governance is to make sure the application always provides what the business
+needs. Figure 2 gives a close-up view of ALM governance, providing a bit more detail on what it entails.
+
+. figure:: http://s3.nutanixworkshops.com/calm/alm/image11.png
+
+The first step in ALM governance is business case development. As Figure 2 shows, this analysis happens
+before the development process begins. Once the business case is approved, application development
+starts, and governance is now implemented through project portfolio management. In some
+organizations, this is simple: A project manager might be attached to the development team, or one of
+the technical people on the team might take on this role. Other organizations use a more formal
+approach, relying on a centralized project management office (PMO) to enforce established procedures.
+Once the completed application is deployed, it becomes part of the organization’s portfolio of
+applications. An application is an asset like any other, and so the organization needs an ongoing
+understanding of its benefits and costs. Application portfolio management (APM) provides this, offering a
+way to avoid duplicating functions across different applications. APM also provides governance for the
+deployed application, addressing things such as when updates and larger revisions make business sense.
+In fact, examining the APM section of the Governance line in more detail would show that it contains
+business case development and project portfolio management for each of the revisions to the application
+shown on the Development line.
+
+Governance is the only thing that extends throughout the entire ALM time span. In many ways, it’s the
+most important aspect of ALM. Get it wrong, and you won’t come close to maximizing the application’s
+business value.
+
+Development
+===========
+
+While equating ALM with the software development process isn’t accurate, development certainly is a
+fundamental part of every custom application’s lifecycle. Figure 3 takes a closer look at this aspect of
+ALM.
+
+. figure:: http://s3.nutanixworkshops.com/calm/alm/image12.png
+
+Once the business case is approved, the software development lifecycle begins. If we expanded the SDLC
+parts of the Development line shown in the figure, a modern process would probably show software
+development as a series of iterations. Each iteration would contain some requirements definition, some
+design, some development, and some testing. This iterative style of development isn’t always
+appropriate—some projects are still better done using more traditional methods—but it’s becoming the
+norm in many areas.
+Once the SDLC process for version 1 of the application is complete, the application is deployed. For most
+applications, however, deployment doesn’t mark the end of development. Instead, the application needs
+periodic updates, as shown in the figure, and perhaps one or more full SDLC efforts to create new
+versions, as in this example. For some applications, the money spent on these updates and new versions
+can exceed the cost of the original development by a significant amount.
+
+Once again, notice the role of SDLC in the overall ALM process. As Figure 2 shows, this aspect is certainly
+important, but it’s far from the whole story. Viewing ALM as synonymous with SDLC is just wrong—it
+leads to a misunderstanding of what’s really required to be successful in this area.
+
+Operations
+==========
+
+Every deployed application must be monitored and managed. Figure 4 shows some of the important parts
+in this operations process.
+
+. figure:: http://s3.nutanixworkshops.com/calm/alm/image13.png
+
+As with Governance, the Operations line is intimately connected to the Development line. For example,
+planning for deployment likely begins shortly before the application is completed, and the act of
+deployment itself is a fundamental part of operations. Once the application is deployed, it must be
+monitored throughout its lifetime. Similarly, each update to the application must be deployed once it’s
+completed, as the figure shows.
 
 Application Release Management
 ******************************
