@@ -262,19 +262,19 @@ The term “container” is really just an abstract concept to describe how a fe
 
 This is really all there is to a Docker container (of course, the devil is in the implementation details — like how to manage the interactions between the various components).
 
-The Future of Docker: 
-*********************
-
-Docker and VMs Will Co-exist...
+Summary:
+********
 
 While Docker is certainly gaining a lot of steam, I don’t believe it will become a real threat to VMs. Containers will continue to gain ground, but there are many use cases where VMs are still better suited.
 
 For instance:
    If you need to run multiple applications on multiple servers, it probably makes sense to use VMs. On the other hand, if you need to run many *copies* of a single application, Docker offers some compelling advantages.
 
-   Moreover, while containers allow you to break your application into more functional discrete parts to create a separation of concerns, it also means there’s a growing number of parts to manage, which can get unwieldy.
+Moreover, while containers allow you to break your application into more functional discrete parts to create a separation of concerns, it also means there’s a growing number of parts to manage, which can get unwieldy.
 
 Security has also been an area of concern with Docker containers — since containers share the same kernel, the barrier between containers is thinner. While a full VM can only issue hypercalls to the host hypervisor, a Docker container can make syscalls to the host kernel, which creates a larger surface area for attack. When security is particularly important, developers are likely to pick VMs, which are isolated by abstracted hardware — making it much more difficult to interfere with each other.
 
 Of course, issues like security and management are certain to evolve as containers get more exposure in production and further scrutiny from users. For now, the debate about containers vs. VMs is really best off to dev ops folks who live and breathe them everyday!
+
+Industry belives that Docker and VMs Will Co-exist to modernize the datacenter...
 
