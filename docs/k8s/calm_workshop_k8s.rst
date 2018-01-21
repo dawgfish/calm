@@ -58,8 +58,8 @@ by downloading them from there.
 As you can see it is running on port 8888. So you could install something else on another port or even install a 
 second instance of Spark and Jupyter.
 
-Need for Orchestration
-**********************
+Container Sprawl- The Need for Orchestration
+********************************************
 
 There's an inherent problem with containers, just like there is with virtual machines. That is the need to keep track of 
 them. When public cloud companies bill you for CPU time or storage then you need to make sure you do not have any orphaned 
