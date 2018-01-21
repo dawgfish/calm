@@ -38,8 +38,8 @@ that can be installed anywhere.
 
 Containers are so popular in todays modern datacenter, they threaten to make VMs obsolete...
 
-Docker Hub
-**********
+**Docker Hub**
+
 
 But making the container small is not the only advantage. The container can be deployed just like a VM 
 template, meaning an application that is ready to go that requires little or no configuration.
