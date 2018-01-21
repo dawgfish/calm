@@ -98,6 +98,11 @@ Docker engine is the layer on which Docker runs. It’s a lightweight runtime an
 
 The Docker Client is what you, as the end-user of Docker, communicate with. Think of it as the UI for Docker. For example, when you do…
 
+.. code-block:: bash
+  
+  docker build iamageek/someImage .
+  
+
 you are communicating to the Docker Client, which then communicates your instructions to the Docker Daemon.
 
 **Docker Daemon**
@@ -116,8 +121,92 @@ A Dockerfile is where you write the instructions to build a Docker image. These 
 
 Once you’ve got your Dockerfile set up, you can use the docker build command to build an image from it. Here’s an example of a Dockerfile:
 
+.. code-block:: bash
+  
+  # Start with ubuntu 14.04
+  FROM ubuntu:14.04
 
-**Sample Dockerfile**
+  MAINTAINER preethi kasireddy iam.preethi.k@gmail.com
+
+  # For SSH access and port redirection
+  ENV ROOTPASSWORD sample
+
+  # Turn off prompts during installations
+  ENV DEBIAN_FRONTEND noninteractive
+  RUN echo "debconf shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
+  RUN echo "debconf shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selections
+
+  # Update packages
+  RUN apt-get -y update
+
+  # Install system tools / libraries
+  RUN apt-get -y install python3-software-properties \
+      software-properties-common \
+      bzip2 \
+      ssh \
+      net-tools \
+      vim \
+      curl \
+      expect \
+      git \
+      nano \
+      wget \
+      build-essential \
+      dialog \
+      make \
+      build-essential \
+      checkinstall \
+      bridge-utils \
+      virt-viewer \
+      python-pip \
+      python-setuptools \
+      python-dev
+
+  # Install Node, npm
+  RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+  RUN apt-get install -y nodejs
+
+  # Add oracle-jdk7 to repositories
+  RUN add-apt-repository ppa:webupd8team/java
+
+  # Make sure the package repository is up to date
+  RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+
+  # Update apt
+  RUN apt-get -y update
+
+  # Install oracle-jdk7
+  RUN apt-get -y install oracle-java7-installer
+
+  # Export JAVA_HOME variable
+  ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
+
+  # Run sshd
+  RUN apt-get install -y openssh-server
+  RUN mkdir /var/run/sshd
+  RUN echo "root:$ROOTPASSWORD" | chpasswd
+  RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+  # SSH login fix. Otherwise user is kicked off after login
+  RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+
+  # Expose Node.js app port
+  EXPOSE 8000
+
+  # Create tap-to-android app directory
+  RUN mkdir -p /usr/src/my-app
+  WORKDIR /usr/src/my-app
+
+  # Install app dependencies
+  COPY . /usr/src/my-app
+  RUN npm install
+
+  # Add entrypoint
+  ADD entrypoint.sh /entrypoint.sh
+  RUN chmod +x /entrypoint.sh
+  ENTRYPOINT ["/entrypoint.sh"]
+
+  CMD ["npm", "start"]
 
 **Docker Image**
 
@@ -159,26 +248,26 @@ Phew! That’s a lot of moving parts. One thing that always got me curious was h
 
 The term “container” is really just an abstract concept to describe how a few different features work together to visualize a “container”. Let’s run through them real quick:
 
-1. Namespaces
+1. **Namespaces**
     Namespaces provide containers with their own view of the underlying Linux system, limiting what the container can see and     access. When you run a container, Docker creates namespaces that the specific container will use.
 
 There are several different types of namespaces in a kernel that Docker makes use of, for example:
 
-   a. NET: Provides a container with its own view of the network stack of the system (e.g. its own network devices, IP   addresses, IP routing tables, /proc/net directory, port numbers, etc.).
-   b. PID: PID stands for Process ID. If you’ve ever ran ps aux in the command line to check what processes are running on your system, you’ll have seen a column named “PID”. The PID namespace gives containers their own scoped view of processes they can view and interact with, including an independent init (PID 1), which is the “ancestor of all processes”.
-   c. MNT: Gives a container its own view of the “mounts” on the system. So, processes in different mount namespaces have different views of the filesystem hierarchy.
-   d. UTS: UTS stands for UNIX Timesharing System. It allows a process to identify system identifiers (i.e. hostname, domainname, etc.). UTS allows containers to have their own hostname and NIS domain name that is independent of other containers and the host system.
-   e. IPC: IPC stands for InterProcess Communication. IPC namespace is responsible for isolating IPC resources between processes running inside each container.
-   f. USER: This namespace is used to isolate users within each container. It functions by allowing containers to have a different view of the uid (user ID) and gid (group ID) ranges, as compared with the host system. As a result, a process’s uid and gid can be different inside and outside a user namespace, which also allows a process to have an unprivileged user outside a container without sacrificing root privilege inside a container.
+   a. **NET:** Provides a container with its own view of the network stack of the system (e.g. its own network devices, IP   addresses, IP routing tables, /proc/net directory, port numbers, etc.).
+   b. **PID:** PID stands for Process ID. If you’ve ever ran ps aux in the command line to check what processes are running on your system, you’ll have seen a column named “PID”. The PID namespace gives containers their own scoped view of processes they can view and interact with, including an independent init (PID 1), which is the “ancestor of all processes”.
+   c. **MNT:** Gives a container its own view of the “mounts” on the system. So, processes in different mount namespaces have different views of the filesystem hierarchy.
+   d. **UTS:** UTS stands for UNIX Timesharing System. It allows a process to identify system identifiers (i.e. hostname, domainname, etc.). UTS allows containers to have their own hostname and NIS domain name that is independent of other containers and the host system.
+   e. **IPC:** IPC stands for InterProcess Communication. IPC namespace is responsible for isolating IPC resources between processes running inside each container.
+   f. **USER:** This namespace is used to isolate users within each container. It functions by allowing containers to have a different view of the uid (user ID) and gid (group ID) ranges, as compared with the host system. As a result, a process’s uid and gid can be different inside and outside a user namespace, which also allows a process to have an unprivileged user outside a container without sacrificing root privilege inside a container.
 
 Docker uses these namespaces together in order to isolate and begin the creation of a container. The next feature is called control groups.
 
-2. Control groups
+2. **Control groups**
    Control groups (also called cgroups) is a Linux kernel feature that isolates, prioritizes, and accounts for the resource usage (CPU, memory, disk I/O, network, etc.) of a set of processes. In this sense, a cgroup ensures that Docker containers only use the resources they need — and, if needed, set up limits to what resources a container *can* use. Cgroups also ensure that a single container doesn’t exhaust one of those resources and bring the entire system down.
 
 Lastly, union file systems is another feature Docker uses:
 
-3. Isolated Union file system:
+3. **Isolated Union file system:**
    Described above in the Docker Images section...
 
 This is really all there is to a Docker container (of course, the devil is in the implementation details — like how to manage the interactions between the various components).
