@@ -30,10 +30,3 @@ Welcome to Calm Workshop's documentation!
    mission  
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
